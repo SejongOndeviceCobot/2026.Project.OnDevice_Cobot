@@ -9,13 +9,14 @@
 ```bash
 source ./env.sh
 python3 tools/verify_evidence.py
+python3 tools/update_source_manifest.py
 python3 tools/verify_evidence.py --check-current
 python3 -m unittest discover -s tests -v
 python3 -m compileall -q src scripts tools
 python3 tools/run.py full --dry-run
 ```
 
-`--check-current`는 현재 소스와 모듈 import의 manifest 일치를 확인합니다. 소스를 고친 PR에서는 manifest도 새 바이트에 맞춰 갱신하고, 그 변경 이유를 설명하세요. 검사가 통과해도 GPU 실행 결과가 된 것은 아닙니다.
+`src/depallet/` 또는 `scripts/run_task.py`, `scripts/guarded_run.py`, `scripts/curobo_worker.py`를 고쳤다면 `update_source_manifest.py`로 현재 소스 목록·해시를 갱신한 뒤 `verify_evidence.py --check-current`를 실행하세요. manifest 변경 이유를 PR에 적습니다. 이 검사는 현재 바이트와 모듈 배치를 기록·확인할 뿐, 시뮬레이션 성공을 증명하지 않습니다.
 
 4. 실행 경로가 바뀌었다면 준비된 자산에서 `python3 tools/run.py smoke --gpu 0`로 첫 상자를 확인하고, 전체 성공을 주장할 때는 `python3 tools/run.py full --gpu 0`의 새 `task-result.json`과 코드 커밋을 기록합니다. CPU 검사나 과거 근거만으로 새 코드의 16/16 성공을 주장하지 않습니다.
 5. `git push -u origin <작업-이름>` 후 Pull Request에 바뀐 모듈, 검사 결과, 새 실행 조건·출력 경로, 남은 제약을 적습니다. 다른 기여자의 검토 후 병합합니다.
