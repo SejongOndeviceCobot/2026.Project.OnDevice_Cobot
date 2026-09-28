@@ -1,0 +1,1109 @@
+{
+  "capabilities": {
+    "geometry_kind": "rigid_cuboid",
+    "measured_physics": false,
+    "moving_contents_supported": false,
+    "noncuboid_supported": false,
+    "physical_execution_validated": false,
+    "unsupported_reasons": []
+  },
+  "cell": {
+    "goal_pose": [
+      0.0,
+      0.78,
+      0.0,
+      0.0
+    ],
+    "pallet_dimensions_m": [
+      1.0,
+      0.8,
+      0.15
+    ],
+    "robot_base_position_m": [
+      -0.5,
+      0.0,
+      0.25
+    ],
+    "robot_base_quaternion_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "robot_reach_verified": false,
+    "source_pose": [
+      0.0,
+      -0.78,
+      0.0,
+      0.0
+    ]
+  },
+  "level": "V1",
+  "provenance": {
+    "autonomous_model_executed": false,
+    "com_source": "unmeasured declared rigid-body assumption",
+    "dimensions_source": "authored_simulation_ground_truth",
+    "fallback_used": false,
+    "generator": "scenario_suite.make_scenario",
+    "inference_executed": false,
+    "irregular_stack_definition": "V3 unequal heights and tower footprints, small source yaw/XY variation; upright rigid supported towers",
+    "material_source": "unmeasured bounded synthetic assumptions",
+    "per_object_unique_xy_dimensions": false,
+    "provider": "deterministic_synthetic_definition",
+    "split": "development_catalog",
+    "unseen_definition": "V3 dimensions sampled outside the finite V1/V2 size catalog; no model training distribution was audited"
+  },
+  "representative": true,
+  "scenario_id": "v1_uniform",
+  "schema": "depallet.scenario.v1",
+  "seed": 0,
+  "spec": {
+    "boxes": [
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_01",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          -0.185,
+          0.265
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "source_pallet",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_02",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          -0.185,
+          0.495
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_01",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_03",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          -0.185,
+          0.725
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_02",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_04",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          -0.185,
+          0.955
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_03",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_05",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          -0.185,
+          0.265
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "source_pallet",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_06",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          -0.185,
+          0.495
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_05",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_07",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          -0.185,
+          0.725
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_06",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_08",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          -0.185,
+          0.955
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_07",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_09",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          0.185,
+          0.265
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "source_pallet",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_10",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          0.185,
+          0.495
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_09",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_11",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          0.185,
+          0.725
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_10",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_12",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          -0.235,
+          0.185,
+          0.955
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_11",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_13",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          0.185,
+          0.265
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "source_pallet",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_14",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          0.185,
+          0.495
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_13",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_15",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          0.185,
+          0.725
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_14",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      },
+      {
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "id": "box_16",
+        "physical": {
+          "center_of_mass_local_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "contact_offset_m": 0.002,
+          "dynamic_friction": 0.4,
+          "excluded_physics": [
+            "cardboard deformation",
+            "crush strength",
+            "vacuum leakage",
+            "moving payload"
+          ],
+          "inertia_model": "uniform_solid_cuboid_proxy_about_center",
+          "mass_kg": 0.7,
+          "mass_range_kg": [
+            0.7,
+            0.7
+          ],
+          "measured": false,
+          "rest_offset_m": 0.0,
+          "restitution": 0.0,
+          "source": "seeded synthetic assumption; not measured or estimated",
+          "static_friction": 0.5
+        },
+        "position_source_m": [
+          0.235,
+          0.185,
+          0.955
+        ],
+        "shape": {
+          "dimensions_source": "authored_simulation_ground_truth",
+          "kind": "rigid_cuboid",
+          "known_to_perception": true
+        },
+        "support_id": "box_15",
+        "surface": {
+          "condition": "planar_dry_proxy",
+          "measured": false,
+          "roughness": 0.94,
+          "suction_seal_model_validated": false
+        },
+        "visual": {
+          "color_rgb": [
+            0.43,
+            0.28,
+            0.15
+          ],
+          "material_category": "brown_cardboard",
+          "measured": false,
+          "roughness": 0.94
+        },
+        "visual_role": "scenario_carton",
+        "yaw_source_rad": 0.0
+      }
+    ],
+    "description": "Synthetic deterministic scenario, not photo reconstruction or model inference",
+    "frame_convention": "right-handed Z-up; column-vector T_world_object; quaternion wxyz",
+    "pallet": {
+      "body_type": "static_fixture",
+      "contact_offset_m": 0.002,
+      "dimensions_m": [
+        1.0,
+        0.8,
+        0.15
+      ],
+      "dimensions_measured": false,
+      "dynamic_friction": 0.3,
+      "geometry": "open compound lattice and three runners; not manufacturer CAD",
+      "mass_kg": null,
+      "mass_reason": "static fixture; no fabricated dynamic mass",
+      "material_identity": "unconfirmed plastic",
+      "measured": false,
+      "rest_offset_m": 0.0,
+      "restitution": 0.0,
+      "source": "assumed compact benchmark pallet, not manufacturer measurement",
+      "static_friction": 0.4
+    },
+    "photo_observation": {
+      "applicable": false,
+      "camera_calibrated": false,
+      "scale_calibrated": false
+    },
+    "physical_calibration_complete": false,
+    "scene_id": "v1_uniform_seed_0",
+    "schema_version": 1,
+    "suction_calibrated": false,
+    "units": {
+      "angle": "rad",
+      "length": "m",
+      "mass": "kg"
+    },
+    "valid_sim_hours": 0.0
+  }
+}

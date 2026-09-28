@@ -1,0 +1,31 @@
+{
+  "schema": "ondevice_cobot.full16_audit_summary.v1",
+  "source_run": "20260921-current/physical-v1-link24-box13early-full16-overhead20-observerfinalize-repeat-v1",
+  "full_audit_sha256": "f0c35e52439df5953cde1f5f2ac0d639112c3f7c753f4d2309748d0594acf727",
+  "task_result_sha256": "943cad2d9f09d0c4feb87c43d445e73613851bf56aafbd8476f9463a7fcfa54a",
+  "audit_passed": true,
+  "task_complete_verified": true,
+  "verified_commits": [
+    "box_16",
+    "box_04",
+    "box_08",
+    "box_12",
+    "box_03",
+    "box_07",
+    "box_11",
+    "box_15",
+    "box_02",
+    "box_06",
+    "box_10",
+    "box_14",
+    "box_13",
+    "box_01",
+    "box_05",
+    "box_09"
+  ],
+  "passed_checks": 473,
+  "total_checks": 473,
+  "audit_scope": "local artifact consistency and CPU recomputation; not cryptographic sensor attestation or continuous collision proof",
+  "physics_launched_by_audit": false,
+  "inference_executed_by_audit": false
+}

@@ -1,0 +1,18 @@
+name: CPU checks
+on:
+  push:
+  pull_request:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check archived release
+        run: python3 tools/verify_evidence.py
+      - name: Run CPU tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Parse Python sources
+        run: python3 -m compileall -q src scripts tools

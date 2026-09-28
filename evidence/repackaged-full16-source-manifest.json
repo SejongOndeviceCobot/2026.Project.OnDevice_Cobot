@@ -1,0 +1,233 @@
+{
+  "files": [
+    {
+      "path": "src/actual_contact_escape.py",
+      "sha256": "6c14c57d1c74621d5792e09548b350b5265287ca7182cb628f4a5c17a6bbd14d"
+    },
+    {
+      "path": "src/camera_rig.py",
+      "sha256": "dc81683e619e5b09d10fb8dea6b0a1e44060e456bdb61ae1bd75e2e52103efe0"
+    },
+    {
+      "path": "src/contact_anchor.py",
+      "sha256": "65237b7ff60552bcd70d2b217ffcd3ecb2d878b477057947be6cf9810764c9f2"
+    },
+    {
+      "path": "src/contact_escape.py",
+      "sha256": "c6cad12ca56d86960bb569f8bbcbc4f375f6b494002e55fbf1d9df38c523897b"
+    },
+    {
+      "path": "src/curobo_bridge.py",
+      "sha256": "961a1be0fd9bcde41814b3dedf115c53097e16156ab7a6334dd2ce55685e69f2"
+    },
+    {
+      "path": "src/curobo_diagnostics.py",
+      "sha256": "8ff9e209fc95899110e6fe9cdddf9756251d613c0186c3d1a9ea4700775de796"
+    },
+    {
+      "path": "src/curobo_geometry.py",
+      "sha256": "ee4c2aaa99f89097355ac1535016cfe51e0e4a1b07182d0475ad1c0fe93a3745"
+    },
+    {
+      "path": "src/curobo_motion_diagnostics.py",
+      "sha256": "783b14c8453838b585be4c7a592275fce7bb307de2a609d3c357ec4521382fc3"
+    },
+    {
+      "path": "src/curobo_seed_repair.py",
+      "sha256": "800c15c2744e2faa2b75cba7335c11ddb6c2565a015dce80cdae5b21ed08f5e8"
+    },
+    {
+      "path": "src/cutamp_execution_bridge.py",
+      "sha256": "988c7167be31d0357445028df8c9a7cf847dc294bb9f0f0d532819e4a5821215"
+    },
+    {
+      "path": "src/cutamp_grasp_bindings.py",
+      "sha256": "ef9ee8794adb0e3133f055320074fdbab32ebc47aaae5e899a345387a0edb652"
+    },
+    {
+      "path": "src/depallet_execution_plan.py",
+      "sha256": "70ffef89e64e194b3e8f8d0c5e2c4466e24157ff28e7ce6ac89441b91380d5e7"
+    },
+    {
+      "path": "src/depallet_scene_export.py",
+      "sha256": "0a1f95a48e6e78338d143536bd235625f40bbeaff9ef732b21f5c323bf3a0220"
+    },
+    {
+      "path": "src/frame_clock.py",
+      "sha256": "24ae2927b1b255e6918ec00558c5d10302e23e15cb0c0e6e96f447492d8e3b8f"
+    },
+    {
+      "path": "src/graspgen_vgp20_adapter.py",
+      "sha256": "cdf75dc7976223bb2e765027ea73f58a8f39141dedde921b9c0fb54c7b23c066"
+    },
+    {
+      "path": "src/h2017_execution.py",
+      "sha256": "844350bc2c4222ee316a411c7431cd3ca5793a0c3bfb603e60618fab56920d2f"
+    },
+    {
+      "path": "src/inspection_ai.py",
+      "sha256": "55ec923775d24198e26bffb97d78dba4ba9775cb4803e24fb3cc86e24855046d"
+    },
+    {
+      "path": "src/live_view.py",
+      "sha256": "dfcde33fa8e64d6c0b7bada79c5c0d9966fa6bed44e29d8330ec71f139f73de3"
+    },
+    {
+      "path": "src/modular_pick_bridge.py",
+      "sha256": "981fa1ba6dd0d127c8cb64d91fa77500257e50269c1ea663261ce28b0ce8a895"
+    },
+    {
+      "path": "src/motion_profiles.py",
+      "sha256": "154b2d46ace398eb60f0fae7ebff1694ff4dc65c9b353b7757724ce1380dd4b1"
+    },
+    {
+      "path": "src/motion_retry.py",
+      "sha256": "7a766ec2f9a2355aa4e1b4ef17f97448acd7669c709b9ac3226173aa2667d721"
+    },
+    {
+      "path": "src/multi_transfer_planning.py",
+      "sha256": "68817f691b3448f3ff155eac127b085f9f029584dbb94d97833fb023ff5f9726"
+    },
+    {
+      "path": "src/nested_ai.py",
+      "sha256": "63e2fa83d228661e64aa10ea559f9195636e09f6b0d88d7f7702677b2d472b78"
+    },
+    {
+      "path": "src/nested_curobo.py",
+      "sha256": "be6853cf6aa5778c2b74e1bb216a6ebd4cbb848e3b3ef6e7a5fe95a215746640"
+    },
+    {
+      "path": "src/observer_recording.py",
+      "sha256": "be1f38151a956d8ef0b375c4df5607e1e47914ad99319f724422347b2115ac75"
+    },
+    {
+      "path": "src/pallet_survey.py",
+      "sha256": "14e5de5d212a06144c9fbcb0d4a806b92dcfe66f45ef2db84ceb28a3357f2d38"
+    },
+    {
+      "path": "src/payload_candidate_validation.py",
+      "sha256": "23143a33b61679aea38851c89ecbbb0a0ce713feae76c7f5587f30a59578b89e"
+    },
+    {
+      "path": "src/payload_cover_profiles.py",
+      "sha256": "342a851a5bbf877132c02092f1ba0cd21419bbe0ce1b137e3e1b8b3b2bacc27f"
+    },
+    {
+      "path": "src/payload_gpu_audit.py",
+      "sha256": "acbb27460dd00c8fa222606e4487b93a8781d4e625c5f9b81ad755dba128cc10"
+    },
+    {
+      "path": "src/payload_gravity.py",
+      "sha256": "f69d070edd2b6298cf60e4afc0c2b5e48fa6eb32b40f7accef8eb2528ea50caf"
+    },
+    {
+      "path": "src/payload_self_contact.py",
+      "sha256": "121177c0b7398d7ae63b57d8a4a1516735347c1e4d28e7bc003209418e7e2d1b"
+    },
+    {
+      "path": "src/payload_upright.py",
+      "sha256": "6f98dead6d59e02851186b2ed1c46efb6eae3391241aa698889035f815b3b081"
+    },
+    {
+      "path": "src/photo_scene.py",
+      "sha256": "b5ef7da9f725794aba0c56c0d0bcbeb453ba83a1cb518b2f7c03d1d349e644d6"
+    },
+    {
+      "path": "src/planning_requests.py",
+      "sha256": "f9d3849b547cfed45eee041533ade19ddf116dc945856c59eac672a9d52179cf"
+    },
+    {
+      "path": "src/point2pose_adapter.py",
+      "sha256": "9c5cdf7562bcd5e25aeb0cb29ae99792bed1955abaf395c43bb6c8bccab5e20e"
+    },
+    {
+      "path": "src/pregrasp_exit_preview.py",
+      "sha256": "50d80371fdc4307b456fcb59dc5035ee762fe3f6bdec9ecbfb237a13a3c4a7ac"
+    },
+    {
+      "path": "src/recording.py",
+      "sha256": "ccc16ddcf74982b2c2ae572022bbe57ff9db733b71d354047f712c32d268d254"
+    },
+    {
+      "path": "src/robot_collision_profiles.py",
+      "sha256": "87a144ebb1891f18192cda261eee6a417aecb8035b187cf0430b695f873e1ce4"
+    },
+    {
+      "path": "src/rollout_trace.py",
+      "sha256": "721dbd0d77ff3d063a1c9d294ef120baaaa4a46d863cbf1207eeec35a22f07a4"
+    },
+    {
+      "path": "src/runtime_costs.py",
+      "sha256": "2be522a82c50cc3bd57592f58211c058fdc93cf96c347c8d28bcebd34a4d6fbf"
+    },
+    {
+      "path": "src/runtime_timing.py",
+      "sha256": "bd0e0944fd2f0ab19c43feab554762123254b87ccdaf94b6617a7e27470a2474"
+    },
+    {
+      "path": "src/scenario_suite.py",
+      "sha256": "1b2a912fb27ae6709aa6908bb4135f14aa0ee900b05824dc594a715c529cd5d7"
+    },
+    {
+      "path": "src/sensor_contract.py",
+      "sha256": "9b38f46291c4b786cb817162bd9fdbc7e2e83eef6d3d4796fd3d9b9439049990"
+    },
+    {
+      "path": "src/source_stack_integrity.py",
+      "sha256": "908aa3547d54f7c91a6649ecc34c74516d2ad7fc52298d814ecec1bf394262c9"
+    },
+    {
+      "path": "src/survey_planning.py",
+      "sha256": "35c28ce0d272ee97c111eb79bc897768badf0d6bb1373064f781eef73d22fb91"
+    },
+    {
+      "path": "src/task_planning.py",
+      "sha256": "1d5d9ae267d35534a5ae4d6d28d9416ec32e4ca2e3829276815855cd32437695"
+    },
+    {
+      "path": "src/task_runtime.py",
+      "sha256": "82781beca5ff1107ddd0d5f94c28406f41d2dcc9a3ff9b01f89be682c6204ccf"
+    },
+    {
+      "path": "src/task_runtime_checks.py",
+      "sha256": "57305f3002a2f23a84a2d2289477ea9cbc9af93adefc82aaea9a6291f4dde99d"
+    },
+    {
+      "path": "src/upright_seed_search.py",
+      "sha256": "66c6d83e1bed9d4f7537df8b26cf96caa6a6e735b9ca9d6a5a8f90511b204e09"
+    },
+    {
+      "path": "src/urdf_fk.py",
+      "sha256": "18f7fdd3bb0eecfd734b5f3f1600dc8fc21049034d1b433d7b531be58102627e"
+    },
+    {
+      "path": "src/vacuum_compliance.py",
+      "sha256": "73460e1e1a127bbaf994bcc626cf43680d28b5e55f9400116563cfe97e3bf3fa"
+    },
+    {
+      "path": "src/vacuum_patch.py",
+      "sha256": "07dd757d29828d8cc32c631483bc9b37936ea644fc86d55a944c99dda67f4341"
+    },
+    {
+      "path": "src/vgp20_surface.py",
+      "sha256": "b909c0323b9de4467557d3562d35c581f57a3c504548e1270f1af58134144aa9"
+    },
+    {
+      "path": "src/wrist_inspection.py",
+      "sha256": "69a74fbb00785479938a9d0c7ae0c0e05dabe05e1b82021b1e5b8632b108dbd1"
+    },
+    {
+      "path": "scripts/run_task.py",
+      "sha256": "e128c881d39c3c920ac49b2a663e02a74489510151f66bffdaa5595c17f5ae1f"
+    },
+    {
+      "path": "scripts/guarded_run.py",
+      "sha256": "897a24369c21d6b778b29467cdde896631f5a79bbd38158df2ca5c0f17979f44"
+    },
+    {
+      "path": "scripts/curobo_worker.py",
+      "sha256": "0bbecff3e7b9a90cca79eef920b038e8c973a30c0a3d7bd9259dc43904309f92"
+    }
+  ],
+  "captured_before_simulation_start": true
+}

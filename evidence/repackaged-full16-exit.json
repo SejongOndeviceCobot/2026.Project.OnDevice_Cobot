@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "child_returncode": 0,
+  "gpu_launch_performed": true,
+  "output": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z",
+  "child_pid": 2903961,
+  "gpu_uuid": "GPU-507e10a3-7939-07a6-2153-43876f0ad326",
+  "gpu_index": 0,
+  "cleanup": {
+    "signals": [],
+    "remaining_pids": []
+  },
+  "elapsed_seconds": 3794.7141441230197
+}

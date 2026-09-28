@@ -1,0 +1,1763 @@
+{
+  "schema": "depallet.continuous_task_execution.v1",
+  "state": "COMPLETE",
+  "passed": true,
+  "requested_prefix_passed": true,
+  "task_complete": true,
+  "requested_transfers": 16,
+  "total_boxes": 16,
+  "completed_ids": [
+    "box_16",
+    "box_04",
+    "box_08",
+    "box_12",
+    "box_03",
+    "box_07",
+    "box_11",
+    "box_15",
+    "box_02",
+    "box_06",
+    "box_10",
+    "box_14",
+    "box_13",
+    "box_01",
+    "box_05",
+    "box_09"
+  ],
+  "transfer_results": [
+    {
+      "box_id": "box_16",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/01_box_16",
+      "execution_sha256": "5f35f4590a8648aee8aa9ad08bce7be3b925b1b0e69ce85acda14305f58f0524",
+      "snapshot_sha256": "b1d51cb96e967219ba884ec9340ca064bc4dcb133c6a468306d74c2ec36e362d",
+      "sim_time_s": 41.125,
+      "physics_step": 9870
+    },
+    {
+      "box_id": "box_04",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/02_box_04",
+      "execution_sha256": "563752e830cb9b8837a472c6c5cb37bc433e2cdb913abcd650e82a1cab64a1dc",
+      "snapshot_sha256": "c8dc49ac20e4264af66552621eedb7b51ed791a8291b9451656236c67c1dc72e",
+      "sim_time_s": 92.425,
+      "physics_step": 22182
+    },
+    {
+      "box_id": "box_08",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/03_box_08",
+      "execution_sha256": "19b332d0e98b03104038fca1c0a5c2491d5c989a219f5d9d09270114fb7959bb",
+      "snapshot_sha256": "3e0838d417486a946b9305cda7b3d73f7df98def43210658dad716e1714b2bef",
+      "sim_time_s": 162.04166666666666,
+      "physics_step": 38890
+    },
+    {
+      "box_id": "box_12",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/04_box_12",
+      "execution_sha256": "7d89a7a1c538c236ceb7968e19122094d2fe0bd74f6d8fa51420ecce1711646f",
+      "snapshot_sha256": "db06c0a58634b8841a4832a548f20cb2fd07d7d2ba708b939da98c079f938665",
+      "sim_time_s": 219.575,
+      "physics_step": 52698
+    },
+    {
+      "box_id": "box_03",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/05_box_03",
+      "execution_sha256": "a4abd8dc9b706cc9793ebafa349f65ab194b4d8c3f5960f395192cca584ba100",
+      "snapshot_sha256": "74df2382c546b543d8b29e269e73c9760c9e309a7ae0fcd367ca3108eec3b179",
+      "sim_time_s": 268.7583333333333,
+      "physics_step": 64502
+    },
+    {
+      "box_id": "box_07",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/06_box_07",
+      "execution_sha256": "dea279dd9ae919209a5c40b14c4b27e23938fd16b1d3926872354884169f2abd",
+      "snapshot_sha256": "6b41d91ca464b94f9711132df6735560859ae6d33c7210025645deb6ce3a566e",
+      "sim_time_s": 315.375,
+      "physics_step": 75690
+    },
+    {
+      "box_id": "box_11",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/07_box_11",
+      "execution_sha256": "e887cf6cf14269c9876f21720d49cfec5da83341515023cc66468b195e2423ac",
+      "snapshot_sha256": "fc0318cc4e141b616282036570ff1761391779a365db0259b0f26a41263a7003",
+      "sim_time_s": 363.10833333333335,
+      "physics_step": 87146
+    },
+    {
+      "box_id": "box_15",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/08_box_15",
+      "execution_sha256": "621bd1cda27780819bf9455e9eaef0c798d361e72e5605fa4cf3d89174a5df24",
+      "snapshot_sha256": "a82c423c32c6c51fe6dcb53b1544dc87b03d264a0b2a538d090eae29980b378b",
+      "sim_time_s": 409.475,
+      "physics_step": 98274
+    },
+    {
+      "box_id": "box_02",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/09_box_02",
+      "execution_sha256": "8ccc50ccea7f75847ac7f0f9dad31500e84cf464fdc2cd78759bead79864099e",
+      "snapshot_sha256": "8e6ab797d2caa5e84e05cc8f901ed88f529460a8b2edc3cfc943636a3b60e813",
+      "sim_time_s": 457.05833333333334,
+      "physics_step": 109694
+    },
+    {
+      "box_id": "box_06",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/10_box_06",
+      "execution_sha256": "6241605f2a24496e013b4e0ad8cef4438df1978cc364cf419eefe68634557243",
+      "snapshot_sha256": "1797f0dcb3728c6b6afcb30e1ae42dc061183ca770dfb5b07f9586898115a722",
+      "sim_time_s": 499.09166666666664,
+      "physics_step": 119782
+    },
+    {
+      "box_id": "box_10",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/11_box_10",
+      "execution_sha256": "c6651ccd5486b92a150a945f19960846cfa3a1b6cf5a4cb0d4f59d80149d3dbe",
+      "snapshot_sha256": "ae2b12bee4609e6c6a49a96216da6dd0e05945bbed1c5fa7e23daf69a35c4531",
+      "sim_time_s": 544.8916666666667,
+      "physics_step": 130774
+    },
+    {
+      "box_id": "box_14",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/12_box_14",
+      "execution_sha256": "5626d31361a193c7baf8c1e668dae48a015d6005a61bd7615a2562b1b44e0702",
+      "snapshot_sha256": "16c52687f240cbe03593320d5dcfe7b8a228062a61739f9055c0db957ba89672",
+      "sim_time_s": 591.9416666666667,
+      "physics_step": 142066
+    },
+    {
+      "box_id": "box_13",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/13_box_13",
+      "execution_sha256": "c1bfa99756125043b4ad68855d2e8909bd830fe096939d58c091210e6b1a82df",
+      "snapshot_sha256": "922bf7a2776f9d78014157490bdcb6c5dea8d2a1763ce4b941a291e2f5293044",
+      "sim_time_s": 635.8416666666667,
+      "physics_step": 152602
+    },
+    {
+      "box_id": "box_01",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/14_box_01",
+      "execution_sha256": "bab2972fe79bd1ab650d7eb60ab70c72d228c5de65124b3348e7b7f51eeb24da",
+      "snapshot_sha256": "d6cb08c9a09982d096166e39e92954dae1a07b10d50a72ed571753e029d25bac",
+      "sim_time_s": 683.175,
+      "physics_step": 163962
+    },
+    {
+      "box_id": "box_05",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/15_box_05",
+      "execution_sha256": "2ca08633db43c3f9152b04a9af548d1747e94cda5fcb56f6305f71c7af89eba1",
+      "snapshot_sha256": "191dcfd7a911a2363421db0138c654fa99177626d09d38ee039a717960c95ede",
+      "sim_time_s": 727.3916666666667,
+      "physics_step": 174574
+    },
+    {
+      "box_id": "box_09",
+      "passed": true,
+      "cycle_directory": "/DATA/jclee/workspace/runs/2026.Project.OnDevice_Cobot-org/full-20260927T192336_405591Z/transfers/16_box_09",
+      "execution_sha256": "8f6db0d8cbf575eec8cc219944a92ee3a12b0f6387baf728c1b8d2df86cb3164",
+      "snapshot_sha256": "135152ee0ea3eec87fb33d232051cdf7ce6dd8b61d5a8e0beefc6d2a20f4ef42",
+      "sim_time_s": 771.9916666666667,
+      "physics_step": 185278
+    }
+  ],
+  "final_whole_scene_gate": {
+    "schema": "depallet.measured_task_state.v1",
+    "passed": true,
+    "placed_goal_com": {
+      "passed": true,
+      "per_box": [
+        {
+          "box_id": "box_16",
+          "supported_mass_kg": 2.8,
+          "bottom_plane_resultant_local_xy_m": [
+            2.5755063951971055e-05,
+            -0.00013438307703699036
+          ],
+          "minimum_support_margin_m": 0.159865616922963,
+          "passed": true
+        },
+        {
+          "box_id": "box_04",
+          "supported_mass_kg": 2.8,
+          "bottom_plane_resultant_local_xy_m": [
+            -1.4124646280303507e-05,
+            -2.6135099033203543e-05
+          ],
+          "minimum_support_margin_m": 0.1599738649009668,
+          "passed": true
+        },
+        {
+          "box_id": "box_08",
+          "supported_mass_kg": 2.8,
+          "bottom_plane_resultant_local_xy_m": [
+            -1.4046799539462981e-05,
+            -5.8694871268505175e-05
+          ],
+          "minimum_support_margin_m": 0.1599413051287315,
+          "passed": true
+        },
+        {
+          "box_id": "box_12",
+          "supported_mass_kg": 2.8,
+          "bottom_plane_resultant_local_xy_m": [
+            3.88100509095017e-05,
+            0.00012565212106784428
+          ],
+          "minimum_support_margin_m": 0.15987434787893215,
+          "passed": true
+        },
+        {
+          "box_id": "box_03",
+          "supported_mass_kg": 2.0999999999999996,
+          "bottom_plane_resultant_local_xy_m": [
+            -2.777190926911899e-05,
+            -2.6794616792585883e-05
+          ],
+          "minimum_support_margin_m": 0.15997320538320742,
+          "passed": true
+        },
+        {
+          "box_id": "box_07",
+          "supported_mass_kg": 2.0999999999999996,
+          "bottom_plane_resultant_local_xy_m": [
+            -2.42674805499121e-05,
+            -4.702819601290114e-05
+          ],
+          "minimum_support_margin_m": 0.1599529718039871,
+          "passed": true
+        },
+        {
+          "box_id": "box_11",
+          "supported_mass_kg": 2.0999999999999996,
+          "bottom_plane_resultant_local_xy_m": [
+            2.170205720660647e-06,
+            0.00014631969241803925
+          ],
+          "minimum_support_margin_m": 0.15985368030758196,
+          "passed": true
+        },
+        {
+          "box_id": "box_15",
+          "supported_mass_kg": 2.0999999999999996,
+          "bottom_plane_resultant_local_xy_m": [
+            1.9290430531199833e-05,
+            -0.0001452013764508444
+          ],
+          "minimum_support_margin_m": 0.15985479862354915,
+          "passed": true
+        },
+        {
+          "box_id": "box_02",
+          "supported_mass_kg": 1.4,
+          "bottom_plane_resultant_local_xy_m": [
+            1.210580763649986e-05,
+            -2.758728742972536e-06
+          ],
+          "minimum_support_margin_m": 0.15999724127125703,
+          "passed": true
+        },
+        {
+          "box_id": "box_06",
+          "supported_mass_kg": 1.4,
+          "bottom_plane_resultant_local_xy_m": [
+            -6.184880563531143e-06,
+            -6.991961422520574e-06
+          ],
+          "minimum_support_margin_m": 0.1599930080385775,
+          "passed": true
+        },
+        {
+          "box_id": "box_10",
+          "supported_mass_kg": 1.4,
+          "bottom_plane_resultant_local_xy_m": [
+            -2.449904232334925e-05,
+            4.237300117495595e-05
+          ],
+          "minimum_support_margin_m": 0.15995762699882504,
+          "passed": true
+        },
+        {
+          "box_id": "box_14",
+          "supported_mass_kg": 1.4,
+          "bottom_plane_resultant_local_xy_m": [
+            -8.609202289234827e-06,
+            -2.70421217568525e-05
+          ],
+          "minimum_support_margin_m": 0.15997295787824314,
+          "passed": true
+        },
+        {
+          "box_id": "box_13",
+          "supported_mass_kg": 0.7,
+          "bottom_plane_resultant_local_xy_m": [
+            -4.515571435314101e-07,
+            1.537348717674602e-06
+          ],
+          "minimum_support_margin_m": 0.15999846265128234,
+          "passed": true
+        },
+        {
+          "box_id": "box_01",
+          "supported_mass_kg": 0.7,
+          "bottom_plane_resultant_local_xy_m": [
+            4.725715912512486e-07,
+            7.760315843221232e-07
+          ],
+          "minimum_support_margin_m": 0.15999922396841568,
+          "passed": true
+        },
+        {
+          "box_id": "box_05",
+          "supported_mass_kg": 0.7,
+          "bottom_plane_resultant_local_xy_m": [
+            -5.838992866415172e-07,
+            4.019202529463096e-07
+          ],
+          "minimum_support_margin_m": 0.15999959807974706,
+          "passed": true
+        },
+        {
+          "box_id": "box_09",
+          "supported_mass_kg": 0.7,
+          "bottom_plane_resultant_local_xy_m": [
+            -4.0751788307393754e-07,
+            -1.5222667069944287e-06
+          ],
+          "minimum_support_margin_m": 0.159998477733293,
+          "passed": true
+        }
+      ],
+      "pallet": {
+        "resultant_xy_goal_m": [
+          4.122406244277806e-05,
+          -2.935409545901102e-05
+        ],
+        "minimum_support_margin_m": 0.399970645904541,
+        "passed": true
+      },
+      "measured_pose_count": 16,
+      "pose_source": "caller_supplied_actual_physics_state",
+      "authored_object_positions_used": false,
+      "assumed_fixed_com_and_mass": true,
+      "companion_actual_support_velocity_gate_required": true,
+      "dynamics_or_crush_capacity_verified": false
+    },
+    "measurement_source": "isaac_runtime_simulation_oracle",
+    "state_sim_time_s": 771.9916666666667,
+    "physics_step": 185278,
+    "remaining_source": {
+      "schema": "depallet.remaining_source_stack_integrity.v1",
+      "passed": true,
+      "input_valid": true,
+      "failure_reasons": [],
+      "per_box": [],
+      "failed_box_ids": [],
+      "limits": {
+        "maximum_xy_overhang_m": 0.002,
+        "maximum_absolute_bottom_plane_gap_m": 0.002,
+        "maximum_world_tilt_deg": 3.0,
+        "maximum_linear_speed_m_s": 0.02,
+        "maximum_angular_speed_rad_s": 0.05
+      },
+      "authored_box_poses_used": false,
+      "box_state_source": "caller_supplied_actual_measured_rigid_body_states",
+      "pallet_pose_source": "assumed_static_spec_envelope_plus_source_pose",
+      "scope": "instantaneous remaining-source support footprint, plane gap, tilt and velocity",
+      "whole_history_undisturbed_claimed": false,
+      "full_collision_certificate": false,
+      "real_robot_ready": false,
+      "state_sim_time_s": 771.9916666666667,
+      "remaining_ids": [],
+      "excluded_ids": [
+        "box_16",
+        "box_04",
+        "box_08",
+        "box_12",
+        "box_03",
+        "box_07",
+        "box_11",
+        "box_15",
+        "box_02",
+        "box_06",
+        "box_10",
+        "box_14",
+        "box_13",
+        "box_01",
+        "box_05",
+        "box_09"
+      ],
+      "measured_ids": [
+        "box_01",
+        "box_02",
+        "box_03",
+        "box_04",
+        "box_05",
+        "box_06",
+        "box_07",
+        "box_08",
+        "box_09",
+        "box_10",
+        "box_11",
+        "box_12",
+        "box_13",
+        "box_14",
+        "box_15",
+        "box_16"
+      ],
+      "source_pose": [
+        0.0,
+        -0.78,
+        0.0,
+        0.0
+      ],
+      "pallet_dimensions_m": [
+        1.0,
+        0.8,
+        0.15
+      ]
+    },
+    "placed_goal": {
+      "schema": "depallet.remaining_source_stack_integrity.v1",
+      "passed": true,
+      "input_valid": true,
+      "failure_reasons": [],
+      "per_box": [
+        {
+          "box_id": "box_01",
+          "support_id": "box_02",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.2350132018327713,
+            0.5949298739433289,
+            0.9549949765205383
+          ],
+          "world_tilt_deg": 0.0004526852473812481,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              -0.4450126985420432,
+              0.4349278171156761,
+              0.8399969191770638
+            ],
+            [
+              -0.4450146502458579,
+              0.7549278171024384,
+              0.8399947597848292
+            ],
+            [
+              -0.025014650257215776,
+              0.7549303787020486,
+              0.8399930338711916
+            ],
+            [
+              -0.025012698553401047,
+              0.4349303787152863,
+              0.8399951932634262
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.20998102589372478,
+              -0.16000506940900233,
+              0.11499927144239584
+            ],
+            [
+              -0.20997542207552392,
+              0.15999493054190966,
+              0.11499938775599336
+            ],
+            [
+              0.2100245778595512,
+              0.1599875755302797,
+              0.11500005158896055
+            ],
+            [
+              0.2100189740413503,
+              -0.1600124244206323,
+              0.11499993527536304
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -7.285576041626829e-07,
+            -6.122440066452794e-07,
+            5.158896054791029e-08,
+            -6.472463696949315e-08
+          ],
+          "minimum_bottom_plane_gap_m": -7.285576041626829e-07,
+          "maximum_bottom_plane_gap_m": 5.158896054791029e-08,
+          "minimum_xy_edge_clearance_m": -2.457785955120584e-05,
+          "maximum_xy_overhang_m": 2.457785955120584e-05
+        },
+        {
+          "box_id": "box_02",
+          "support_id": "box_03",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.23503610491752625,
+            0.5949370265007019,
+            0.7249953150749207
+          ],
+          "world_tilt_deg": 0.0005218296374696604,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              -0.445032981424645,
+              0.43493125041031266,
+              0.6099976478161186
+            ],
+            [
+              -0.4450405369473219,
+              0.7549312503130242,
+              0.6099953721421719
+            ],
+            [
+              -0.025040537071191193,
+              0.7549411669195427,
+              0.6099929823432618
+            ],
+            [
+              -0.0250329815485143,
+              0.43494116701683116,
+              0.6099952580172086
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.21005687480218518,
+              -0.16003564113821755,
+              0.1149988112224687
+            ],
+            [
+              -0.2100531351712522,
+              0.15996435883623242,
+              0.11499727266143785
+            ],
+            [
+              0.20994686479967245,
+              0.15995945056786187,
+              0.11499669633329208
+            ],
+            [
+              0.2099431251687395,
+              -0.16004054940658813,
+              0.11499823489432294
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -1.1887775313024207e-06,
+            -2.7273385621584545e-06,
+            -3.303666707921149e-06,
+            -1.7651056770651152e-06
+          ],
+          "minimum_bottom_plane_gap_m": -3.303666707921149e-06,
+          "maximum_bottom_plane_gap_m": -1.1887775313024207e-06,
+          "minimum_xy_edge_clearance_m": -5.68748021851917e-05,
+          "maximum_xy_overhang_m": 5.68748021851917e-05
+        },
+        {
+          "box_id": "box_03",
+          "support_id": "box_04",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.23498225212097168,
+            0.5949740409851074,
+            0.4949975609779358
+          ],
+          "world_tilt_deg": 0.00028039413587922665,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              -0.44497710095402354,
+              0.4349663637354187,
+              0.3799988362687325
+            ],
+            [
+              -0.44498839610098884,
+              0.7549663635352255,
+              0.3799980991719636
+            ],
+            [
+              -0.024988396366543292,
+              0.7549811884114401,
+              0.37999628568989324
+            ],
+            [
+              -0.024977101219577996,
+              0.4349811886116333,
+              0.37999702278666214
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.20998836993226389,
+              -0.1600115942791902,
+              0.11499881476114428
+            ],
+            [
+              -0.20999371064279546,
+              0.15998840567549394,
+              0.11499812267685387
+            ],
+            [
+              0.2100062892946508,
+              0.15999541535407302,
+              0.11499627619938559
+            ],
+            [
+              0.21001163000518236,
+              -0.1600045846006111,
+              0.11499696828367598
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -1.1852388557276328e-06,
+            -1.8773231461322037e-06,
+            -3.723800614419126e-06,
+            -3.031716324028433e-06
+          ],
+          "minimum_bottom_plane_gap_m": -3.723800614419126e-06,
+          "maximum_bottom_plane_gap_m": -1.1852388557276328e-06,
+          "minimum_xy_edge_clearance_m": -1.163000518236701e-05,
+          "maximum_xy_overhang_m": 1.163000518236701e-05
+        },
+        {
+          "box_id": "box_04",
+          "support_id": "source_pallet",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.23499169945716858,
+            0.594981849193573,
+            0.26500001549720764
+          ],
+          "world_tilt_deg": 9.234973977599935e-06,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "assumed_static_pallet",
+          "bottom_corners_world_m": [
+            [
+              -0.4449887131675423,
+              0.43497792544628466,
+              0.1500000215050466
+            ],
+            [
+              -0.44499466760403217,
+              0.7549779253908826,
+              0.14999997649298769
+            ],
+            [
+              -0.024994667676744547,
+              0.7549857405887802,
+              0.15000000948937164
+            ],
+            [
+              -0.024988713240254673,
+              0.4349857406441823,
+              0.15000005450143056
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.4449887131675423,
+              -0.34502207455371536,
+              0.0750000215050466
+            ],
+            [
+              -0.44499466760403217,
+              -0.02502207460911743,
+              0.07499997649298769
+            ],
+            [
+              -0.024994667676744547,
+              -0.02501425941121982,
+              0.07500000948937165
+            ],
+            [
+              -0.024988713240254673,
+              -0.34501425935581775,
+              0.07500005450143056
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            2.1505046604586298e-08,
+            -2.3507012308909836e-08,
+            9.489371649573641e-09,
+            5.4501430563069775e-08
+          ],
+          "minimum_bottom_plane_gap_m": -2.3507012308909836e-08,
+          "maximum_bottom_plane_gap_m": 5.4501430563069775e-08,
+          "minimum_xy_edge_clearance_m": 0.05497792544628466,
+          "maximum_xy_overhang_m": 0.0
+        },
+        {
+          "box_id": "box_05",
+          "support_id": "box_06",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23500780761241913,
+            0.5949013233184814,
+            0.9549950957298279
+          ],
+          "world_tilt_deg": 0.0003531693279042456,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              0.02500585524943305,
+              0.43490425028037843,
+              0.8399945886745368
+            ],
+            [
+              0.025010927819418216,
+              0.7549042502382195,
+              0.839993470287746
+            ],
+            [
+              0.44501092776123596,
+              0.7548975924975669,
+              0.8399956027894884
+            ],
+            [
+              0.4450058551912508,
+              0.43489759253972593,
+              0.8399967211762791
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.21000391382072223,
+              -0.16002302424676562,
+              0.1149999992721543
+            ],
+            [
+              -0.21001634176081038,
+              0.15997697551119788,
+              0.1149993286779097
+            ],
+            [
+              0.20998365792242335,
+              0.1599932871828029,
+              0.11499944289135351
+            ],
+            [
+              0.2099960858625115,
+              -0.16000671257516055,
+              0.115000113485598
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -7.278457003767613e-10,
+            -6.713220903065142e-07,
+            -5.571086464928321e-07,
+            1.134855979884053e-07
+          ],
+          "minimum_bottom_plane_gap_m": -6.713220903065142e-07,
+          "maximum_bottom_plane_gap_m": 1.134855979884053e-07,
+          "minimum_xy_edge_clearance_m": -2.3024246765618317e-05,
+          "maximum_xy_overhang_m": 2.3024246765618317e-05
+        },
+        {
+          "box_id": "box_06",
+          "support_id": "box_07",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23501907289028168,
+            0.5949156284332275,
+            0.7249953746795654
+          ],
+          "world_tilt_deg": 0.0002867688292912609,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              0.025010875577334668,
+              0.43492695244465457,
+              0.6099945893918565
+            ],
+            [
+              0.025028376084180015,
+              0.754926951965798,
+              0.6099941416590323
+            ],
+            [
+              0.4450283754512425,
+              0.7549039825533876,
+              0.6099961599701552
+            ],
+            [
+              0.4450108749443972,
+              0.43490398303224426,
+              0.6099966077029793
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.21004449320197757,
+              -0.16004533806149823,
+              0.11499649593999503
+            ],
+            [
+              -0.21001530711716235,
+              0.15995466060695895,
+              0.11499709578076106
+            ],
+            [
+              0.20998469113303386,
+              0.1599163538677178,
+              0.11499865427354665
+            ],
+            [
+              0.20995550504821864,
+              -0.16008364480073942,
+              0.11499805443278052
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -3.5040600049746073e-06,
+            -2.904219238944461e-06,
+            -1.3457264533556224e-06,
+            -1.9455672194829132e-06
+          ],
+          "minimum_bottom_plane_gap_m": -3.5040600049746073e-06,
+          "maximum_bottom_plane_gap_m": -1.3457264533556224e-06,
+          "minimum_xy_edge_clearance_m": -8.364480073941305e-05,
+          "maximum_xy_overhang_m": 8.364480073941305e-05
+        },
+        {
+          "box_id": "box_07",
+          "support_id": "box_08",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23504965007305145,
+            0.5949795842170715,
+            0.4949977993965149
+          ],
+          "world_tilt_deg": 0.00019777901932941858,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              0.025055618883919245,
+              0.43497153918508336,
+              0.37999809335350354
+            ],
+            [
+              0.02504393330657681,
+              0.7549715389700049,
+              0.37999704574796467
+            ],
+            [
+              0.4450439330262854,
+              0.7549868762917719,
+              0.3799975054408965
+            ],
+            [
+              0.44505561860362786,
+              0.4349868765068503,
+              0.3799985530464354
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.20999666738401043,
+              -0.16002807094249571,
+              0.11499808690169694
+            ],
+            [
+              -0.20999227411827792,
+              0.15997192902437524,
+              0.11499670785269021
+            ],
+            [
+              0.2100077258418717,
+              0.15996616286514873,
+              0.11499718293971462
+            ],
+            [
+              0.2100033325761392,
+              -0.16003383710172225,
+              0.11499856198872138
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -1.9130983030662962e-06,
+            -3.2921473097913267e-06,
+            -2.8170602853899718e-06,
+            -1.438011278623308e-06
+          ],
+          "minimum_bottom_plane_gap_m": -3.2921473097913267e-06,
+          "maximum_bottom_plane_gap_m": -1.438011278623308e-06,
+          "minimum_xy_edge_clearance_m": -3.383710172225052e-05,
+          "maximum_xy_overhang_m": 3.383710172225052e-05
+        },
+        {
+          "box_id": "box_08",
+          "support_id": "source_pallet",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23504424095153809,
+            0.5950102806091309,
+            0.2650001645088196
+          ],
+          "world_tilt_deg": 5.938485182304961e-05,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "assumed_static_pallet",
+          "bottom_corners_world_m": [
+            [
+              0.025052276418743052,
+              0.43499984818279475,
+              0.15000000648112705
+            ],
+            [
+              0.02503619757572259,
+              0.7549998477786712,
+              0.15000033792475587
+            ],
+            [
+              0.44503619704553543,
+              0.7550209512601516,
+              0.15000032253663564
+            ],
+            [
+              0.4450522758885559,
+              0.435020951664275,
+              0.14999999109300682
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              0.025052276418743052,
+              -0.3450001518172053,
+              0.07500000648112705
+            ],
+            [
+              0.02503619757572259,
+              -0.025000152221328786,
+              0.07500033792475587
+            ],
+            [
+              0.44503619704553543,
+              -0.024979048739848464,
+              0.07500032253663565
+            ],
+            [
+              0.4450522758885559,
+              -0.344979048335725,
+              0.07499999109300683
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            6.481127051705116e-09,
+            3.379247558721321e-07,
+            3.225366356496284e-07,
+            -8.906993170798572e-09
+          ],
+          "minimum_bottom_plane_gap_m": -8.906993170798572e-09,
+          "maximum_bottom_plane_gap_m": 3.379247558721321e-07,
+          "minimum_xy_edge_clearance_m": 0.05494772411144411,
+          "maximum_xy_overhang_m": 0.0
+        },
+        {
+          "box_id": "box_09",
+          "support_id": "box_10",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.23493692278862,
+            0.9652743935585022,
+            0.9549949169158936
+          ],
+          "world_tilt_deg": 0.000785136669728795,
+          "linear_speed_m_s": 4.743005355373511e-05,
+          "angular_speed_rad_s": 0.0007130369901764538,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              -0.4449821167596505,
+              0.8053357859582515,
+              0.8399920548273124
+            ],
+            [
+              -0.44489089584624875,
+              1.125335772928255,
+              0.8399962906998877
+            ],
+            [
+              -0.024890912913965557,
+              1.1252160454597042,
+              0.8399977790260691
+            ],
+            [
+              -0.024982133827367303,
+              0.8052160584897008,
+              0.8399935431534938
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.21007459417516694,
+              -0.15987393230755625,
+              0.11499960330826715
+            ],
+            [
+              -0.21002023213186755,
+              0.16012606307462854,
+              0.11500001560370764
+            ],
+            [
+              0.2099797618075943,
+              0.16005471289272086,
+              0.11500007541293492
+            ],
+            [
+              0.2099253997642949,
+              -0.15994528248946394,
+              0.11499966311749443
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -3.9669173285128423e-07,
+            1.560370763153962e-08,
+            7.541293491064582e-08,
+            -3.36882505572178e-07
+          ],
+          "minimum_bottom_plane_gap_m": -3.9669173285128423e-07,
+          "maximum_bottom_plane_gap_m": 7.541293491064582e-08,
+          "minimum_xy_edge_clearance_m": -0.00012606307462853517,
+          "maximum_xy_overhang_m": 0.00012606307462853517
+        },
+        {
+          "box_id": "box_10",
+          "support_id": "box_11",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.2348887175321579,
+            0.9651868939399719,
+            0.7249950766563416
+          ],
+          "world_tilt_deg": 0.0007118045605002596,
+          "linear_speed_m_s": 3.090198442046172e-05,
+          "angular_speed_rad_s": 0.000679303112063638,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              -0.4449067540408298,
+              0.8052124576428089,
+              0.6099924502843882
+            ],
+            [
+              -0.4448698951684309,
+              1.125212455497192,
+              0.6099962736765699
+            ],
+            [
+              -0.024869897957008308,
+              1.1251640782100871,
+              0.609997703046044
+            ],
+            [
+              -0.024906756829407156,
+              0.805164080355704,
+              0.6099938796538621
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.20998499550466904,
+              -0.1598033352680103,
+              0.11499661138769225
+            ],
+            [
+              -0.20995833076725545,
+              0.1601966636173846,
+              0.11499814078753605
+            ],
+            [
+              0.210041667774229,
+              0.16016166614678298,
+              0.1149987153323845
+            ],
+            [
+              0.21001500303681547,
+              -0.1598383327386119,
+              0.11499718593254057
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -3.388612307753114e-06,
+            -1.8592124639560392e-06,
+            -1.2846676155087167e-06,
+            -2.8140674594306914e-06
+          ],
+          "minimum_bottom_plane_gap_m": -3.388612307753114e-06,
+          "maximum_bottom_plane_gap_m": -1.2846676155087167e-06,
+          "minimum_xy_edge_clearance_m": -0.00019666361738460147,
+          "maximum_xy_overhang_m": 0.00019666361738460147
+        },
+        {
+          "box_id": "box_11",
+          "support_id": "box_12",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.23491643369197845,
+            0.9650099277496338,
+            0.49499741196632385
+          ],
+          "world_tilt_deg": 0.0004269713383515847,
+          "linear_speed_m_s": 1.4033506322817878e-05,
+          "angular_speed_rad_s": 0.00018203673236556525,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              -0.44492129649997814,
+              0.8050174421176888,
+              0.37999583746273236
+            ],
+            [
+              -0.4449111023618296,
+              1.1250174419470909,
+              0.37999813140079175
+            ],
+            [
+              -0.024911102575818383,
+              1.125004062134641,
+              0.37999898647630165
+            ],
+            [
+              -0.02492129671396684,
+              0.8050040623052389,
+              0.37999669253824225
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.20995605464125072,
+              -0.159971410877158,
+              0.1149958148970644
+            ],
+            [
+              -0.2099448002806002,
+              0.1600285889165993,
+              0.11499812458038125
+            ],
+            [
+              0.21005519945877915,
+              0.16001381756208513,
+              0.1149989780492621
+            ],
+            [
+              0.21004394509812868,
+              -0.15998618223167224,
+              0.11499666836594524
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -4.185102935608254e-06,
+            -1.8754196187548144e-06,
+            -1.0219507379088943e-06,
+            -3.3316340547623335e-06
+          ],
+          "minimum_bottom_plane_gap_m": -4.185102935608254e-06,
+          "maximum_bottom_plane_gap_m": -1.0219507379088943e-06,
+          "minimum_xy_edge_clearance_m": -5.519945877915933e-05,
+          "maximum_xy_overhang_m": 5.519945877915933e-05
+        },
+        {
+          "box_id": "box_12",
+          "support_id": "source_pallet",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            -0.23496577143669128,
+            0.9649895429611206,
+            0.26500001549720764
+          ],
+          "world_tilt_deg": 2.831646840510158e-06,
+          "linear_speed_m_s": 0.00020235921933172852,
+          "angular_speed_rad_s": 0.0007990535299835733,
+          "support_pose_source": "assumed_static_pallet",
+          "bottom_corners_world_m": [
+            [
+              -0.4449652408845617,
+              0.8049888415325215,
+              0.15000002256690692
+            ],
+            [
+              -0.4449663011070555,
+              1.1249888415307647,
+              0.1500000068216064
+            ],
+            [
+              -0.02496630110936071,
+              1.124990233072788,
+              0.15000000842750866
+            ],
+            [
+              -0.024965240886866913,
+              0.8049902330745446,
+              0.15000002417280917
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.4449652408845617,
+              0.024988841532521455,
+              0.07500002256690692
+            ],
+            [
+              -0.4449663011070555,
+              0.3449888415307647,
+              0.07500000682160642
+            ],
+            [
+              -0.02496630110936071,
+              0.34499023307278787,
+              0.07500000842750866
+            ],
+            [
+              -0.024965240886866913,
+              0.02499023307454462,
+              0.07500002417280917
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            2.256690692648e-08,
+            6.821606418627724e-09,
+            8.427508663144678e-09,
+            2.4172809170996956e-08
+          ],
+          "minimum_bottom_plane_gap_m": 6.821606418627724e-09,
+          "maximum_bottom_plane_gap_m": 2.4172809170996956e-08,
+          "minimum_xy_edge_clearance_m": 0.055009766927212156,
+          "maximum_xy_overhang_m": 0.0
+        },
+        {
+          "box_id": "box_13",
+          "support_id": "box_14",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23507769405841827,
+            0.9647137522697449,
+            0.9549948573112488
+          ],
+          "world_tilt_deg": 0.0007983016436479216,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              0.025092229968206675,
+              0.8046937311184913,
+              0.8399961716597562
+            ],
+            [
+              0.025064063163817846,
+              1.1246937298502588,
+              0.8399918938198465
+            ],
+            [
+              0.44506406153355216,
+              1.1247306988030685,
+              0.8399935429850661
+            ],
+            [
+              0.44509222833794093,
+              0.8047307000713011,
+              0.8399978208249758
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.21001481311542258,
+              -0.16006064465346106,
+              0.11500001362643451
+            ],
+            [
+              -0.21001611939123627,
+              0.15993935534360515,
+              0.11499959974315323
+            ],
+            [
+              0.20998388060525924,
+              0.1599410698306957,
+              0.11499966560615768
+            ],
+            [
+              0.2099851868810729,
+              -0.16005893016637035,
+              0.11500007948943895
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            1.3626434508529073e-08,
+            -4.002568467775802e-07,
+            -3.3439384232447633e-07,
+            7.948943894775518e-08
+          ],
+          "minimum_bottom_plane_gap_m": -4.002568467775802e-07,
+          "maximum_bottom_plane_gap_m": 7.948943894775518e-08,
+          "minimum_xy_edge_clearance_m": -6.0644653461061626e-05,
+          "maximum_xy_overhang_m": 6.0644653461061626e-05
+        },
+        {
+          "box_id": "box_14",
+          "support_id": "box_15",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23509404063224792,
+            0.9647706151008606,
+            0.7249950170516968
+          ],
+          "world_tilt_deg": 0.0007247713599225366,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              0.025107905284069504,
+              0.8047515998724735,
+              0.6099961573752909
+            ],
+            [
+              0.025081044753928833,
+              1.12475159872182,
+              0.6099922934235869
+            ],
+            [
+              0.4450810432713286,
+              1.1247868531867504,
+              0.6099938767465042
+            ],
+            [
+              0.44510790380146925,
+              0.8047868543374038,
+              0.6099977406982082
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.20995955321393783,
+              -0.16019574681354953,
+              0.11499808845325168
+            ],
+            [
+              -0.20996398534464583,
+              0.15980425315200042,
+              0.11499653790313243
+            ],
+            [
+              0.21003601461466737,
+              0.15981007032636946,
+              0.11499711877186652
+            ],
+            [
+              0.21004044674537536,
+              -0.1601899296391806,
+              0.11499866932198578
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -1.911546748320503e-06,
+            -3.4620968675791453e-06,
+            -2.8812281334805734e-06,
+            -1.330678014221931e-06
+          ],
+          "minimum_bottom_plane_gap_m": -3.4620968675791453e-06,
+          "maximum_bottom_plane_gap_m": -1.330678014221931e-06,
+          "minimum_xy_edge_clearance_m": -0.00019574681354952994,
+          "maximum_xy_overhang_m": 0.00019574681354952994
+        },
+        {
+          "box_id": "box_15",
+          "support_id": "box_16",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23505650460720062,
+            0.9649612307548523,
+            0.49499741196632385
+          ],
+          "world_tilt_deg": 0.00043620397674800574,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "actual_measured_box",
+          "bottom_corners_world_m": [
+            [
+              0.02506799387646541,
+              0.8049456811531865,
+              0.3799980674170408
+            ],
+            [
+              0.025045565473317655,
+              1.124945680358835,
+              0.3799957540260347
+            ],
+            [
+              0.4450455644405095,
+              1.1249751176452143,
+              0.37999675652227244
+            ],
+            [
+              0.4450679928436573,
+              0.8049751184395659,
+              0.3799990699132785
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              -0.2099879205544643,
+              -0.16002996357699784,
+              0.11499805790134544
+            ],
+            [
+              -0.20998181438716704,
+              0.15997003635633936,
+              0.11499573865055875
+            ],
+            [
+              0.21001818553545312,
+              0.15996202201811888,
+              0.11499661582648646
+            ],
+            [
+              0.21001207936815589,
+              -0.1600379779152183,
+              0.1149989350772731
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            -1.9420986545615193e-06,
+            -4.26134944125911e-06,
+            -3.3841735135459183e-06,
+            -1.0649227269038386e-06
+          ],
+          "minimum_bottom_plane_gap_m": -4.26134944125911e-06,
+          "maximum_bottom_plane_gap_m": -1.0649227269038386e-06,
+          "minimum_xy_edge_clearance_m": -3.797791521828464e-05,
+          "maximum_xy_overhang_m": 3.797791521828464e-05
+        },
+        {
+          "box_id": "box_16",
+          "support_id": "source_pallet",
+          "passed": true,
+          "failure_reasons": [],
+          "position_world_m": [
+            0.23504167795181274,
+            0.9649943709373474,
+            0.2650000751018524
+          ],
+          "world_tilt_deg": 1.7118108379478336e-05,
+          "linear_speed_m_s": 0.0,
+          "angular_speed_rad_s": 0.0,
+          "support_pose_source": "assumed_static_pallet",
+          "bottom_corners_world_m": [
+            [
+              0.025055980386023524,
+              0.8049756478694263,
+              0.15000000951264986
+            ],
+            [
+              0.025027445814904847,
+              1.1249756465972047,
+              0.15000001537060847
+            ],
+            [
+              0.44502744414509543,
+              1.1250130982217958,
+              0.15000014069106526
+            ],
+            [
+              0.4450559787162141,
+              0.8050130994940173,
+              0.1500001348331066
+            ]
+          ],
+          "bottom_corners_support_local_m": [
+            [
+              0.025055980386023524,
+              0.0249756478694263,
+              0.07500000951264986
+            ],
+            [
+              0.025027445814904847,
+              0.3449756465972047,
+              0.07500001537060848
+            ],
+            [
+              0.44502744414509543,
+              0.3450130982217958,
+              0.07500014069106527
+            ],
+            [
+              0.4450559787162141,
+              0.02501309949401731,
+              0.0750001348331066
+            ]
+          ],
+          "bottom_corner_support_plane_gaps_m": [
+            9.51264986226441e-09,
+            1.5370608480447245e-08,
+            1.4069106527014874e-07,
+            1.3483310659645475e-07
+          ],
+          "minimum_bottom_plane_gap_m": 9.51264986226441e-09,
+          "maximum_bottom_plane_gap_m": 1.4069106527014874e-07,
+          "minimum_xy_edge_clearance_m": 0.05494402128378589,
+          "maximum_xy_overhang_m": 0.0
+        }
+      ],
+      "failed_box_ids": [],
+      "limits": {
+        "maximum_xy_overhang_m": 0.002,
+        "maximum_absolute_bottom_plane_gap_m": 0.002,
+        "maximum_world_tilt_deg": 3.0,
+        "maximum_linear_speed_m_s": 0.02,
+        "maximum_angular_speed_rad_s": 0.05
+      },
+      "authored_box_poses_used": false,
+      "box_state_source": "caller_supplied_actual_measured_rigid_body_states",
+      "pallet_pose_source": "assumed_static_spec_envelope_plus_source_pose",
+      "scope": "instantaneous remaining-source support footprint, plane gap, tilt and velocity",
+      "whole_history_undisturbed_claimed": false,
+      "full_collision_certificate": false,
+      "real_robot_ready": false,
+      "state_sim_time_s": 771.9916666666667,
+      "remaining_ids": [
+        "box_01",
+        "box_02",
+        "box_03",
+        "box_04",
+        "box_05",
+        "box_06",
+        "box_07",
+        "box_08",
+        "box_09",
+        "box_10",
+        "box_11",
+        "box_12",
+        "box_13",
+        "box_14",
+        "box_15",
+        "box_16"
+      ],
+      "excluded_ids": [],
+      "measured_ids": [
+        "box_01",
+        "box_02",
+        "box_03",
+        "box_04",
+        "box_05",
+        "box_06",
+        "box_07",
+        "box_08",
+        "box_09",
+        "box_10",
+        "box_11",
+        "box_12",
+        "box_13",
+        "box_14",
+        "box_15",
+        "box_16"
+      ],
+      "source_pose": [
+        0.0,
+        0.78,
+        0.0,
+        0.0
+      ],
+      "pallet_dimensions_m": [
+        1.0,
+        0.8,
+        0.15
+      ]
+    },
+    "placement_checks": [
+      {
+        "box_id": "box_16",
+        "position_error_m": 4.2056434156290846e-05,
+        "orientation_error_rad": 8.917102876352049e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_04",
+        "position_error_m": 1.995873306132016e-05,
+        "orientation_error_rad": 1.8608298993203746e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_08",
+        "position_error_m": 4.542003721099243e-05,
+        "orientation_error_rad": 5.025707281932258e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_12",
+        "position_error_m": 3.57902842747601e-05,
+        "orientation_error_rad": 3.313557246274079e-06,
+        "passed": true
+      },
+      {
+        "box_id": "box_03",
+        "position_error_m": 3.1540553147187654e-05,
+        "orientation_error_rad": 3.5634954791060645e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_07",
+        "position_error_m": 5.3728731627503316e-05,
+        "orientation_error_rad": 3.6680206367947465e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_11",
+        "position_error_m": 8.419374066667926e-05,
+        "orientation_error_rad": 3.2716679493770715e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_15",
+        "position_error_m": 6.857494383910244e-05,
+        "orientation_error_rad": 7.050103297917765e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_02",
+        "position_error_m": 7.274046471142926e-05,
+        "orientation_error_rad": 2.5306682021961664e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_06",
+        "position_error_m": 8.662407293861058e-05,
+        "orientation_error_rad": 5.491761855180055e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_10",
+        "position_error_m": 0.00021757153251288105,
+        "orientation_error_rad": 0.00011585202719780022,
+        "passed": true
+      },
+      {
+        "box_id": "box_14",
+        "position_error_m": 0.000247963509897355,
+        "orientation_error_rad": 8.488697559423479e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_13",
+        "position_error_m": 0.00029664891207849297,
+        "orientation_error_rad": 8.911719651525255e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_01",
+        "position_error_m": 7.153452004926928e-05,
+        "orientation_error_rad": 9.981064285308035e-06,
+        "passed": true
+      },
+      {
+        "box_id": "box_05",
+        "position_error_m": 9.910649904592134e-05,
+        "orientation_error_rad": 1.7008015929870142e-05,
+        "passed": true
+      },
+      {
+        "box_id": "box_09",
+        "position_error_m": 0.00028159615992936376,
+        "orientation_error_rad": 0.00028539455059614925,
+        "passed": true
+      }
+    ],
+    "completed_ids": [
+      "box_16",
+      "box_04",
+      "box_08",
+      "box_12",
+      "box_03",
+      "box_07",
+      "box_11",
+      "box_15",
+      "box_02",
+      "box_06",
+      "box_10",
+      "box_14",
+      "box_13",
+      "box_01",
+      "box_05",
+      "box_09"
+    ],
+    "active_target_excluded": null,
+    "all_boxes_at_goal": true,
+    "poses_restored_or_fabricated": false,
+    "scope": "measured support, tilt, velocity and committed-goal poses at this snapshot",
+    "whole_history_no_contact_claimed": false
+  },
+  "runtime_contract": {
+    "schema": "depallet.continuous_task_contract.v3",
+    "prerelease_stability_required": true,
+    "resolve_goal_on_measured_support_required": true,
+    "preclose_stability_required": true,
+    "prerelease_payload_compensation_required": true,
+    "prerelease_pose_check_required": true,
+    "perception_source": "simulation_oracle",
+    "robot_collision_profile": "link24_hull_margin10mm",
+    "robot_collision_profile_receipt": "robot-collision-profile.json",
+    "robot_config_sha256": "145003cb16ae494c6587067a0d31e237f2e01dae191e9deb1e3ecb717b7e7be6",
+    "payload_cover_profile": "grid10x7x7",
+    "transport_overhead_m": 0.2,
+    "recording_compression_level": 1,
+    "recording_workers": 2,
+    "inspection_view": "wrist_pallet_v1",
+    "inspection_ai_mode": "off",
+    "survey_scope": "highest_layer",
+    "survey_candidate": "top_180_clear",
+    "live_preview_hz": 1,
+    "camera_rig": "overhead_wrist_v2",
+    "motion_profile": "brisk",
+    "camera_hz": 30,
+    "observer_is_policy_input": false,
+    "motion_profile_receipt": "motion-profile.json"
+  },
+  "physics_grasp_validated": true,
+  "perception_source": "simulation_oracle",
+  "continuous_simulation": true,
+  "scene_resets_after_initialization": 0,
+  "joint_or_object_teleport_used": false,
+  "end_to_end_perception_pipeline_validated": false,
+  "valid_sim_hours": 0,
+  "physical_task_complete": true,
+  "finalized": true,
+  "rgbd_integrity_passed": true
+}

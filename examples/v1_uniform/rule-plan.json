@@ -1,0 +1,713 @@
+{
+  "actual_com_preserved_in_output": true,
+  "autonomous_model_executed": false,
+  "execution_authorized": false,
+  "fallback_used": false,
+  "geometry_generator_used_centered_com_view": true,
+  "inferred_by_vlm": false,
+  "model_proposal": null,
+  "need_reobserve_after_each_transfer": true,
+  "order": [
+    "box_16",
+    "box_04",
+    "box_08",
+    "box_12",
+    "box_03",
+    "box_07",
+    "box_11",
+    "box_15",
+    "box_02",
+    "box_06",
+    "box_10",
+    "box_14",
+    "box_13",
+    "box_01",
+    "box_05",
+    "box_09"
+  ],
+  "order_validation": {
+    "passed": true,
+    "errors": [],
+    "accepted_prefix": [
+      "box_16",
+      "box_04",
+      "box_08",
+      "box_12",
+      "box_03",
+      "box_07",
+      "box_11",
+      "box_15",
+      "box_02",
+      "box_06",
+      "box_10",
+      "box_14",
+      "box_13",
+      "box_01",
+      "box_05",
+      "box_09"
+    ],
+    "remaining_ids": [],
+    "validation_scope": "authored geometry, top exposure, nominal tool envelope and assumed payload only",
+    "motion_validated": false,
+    "actual_suction_verified": false,
+    "inferred_by_vlm": false
+  },
+  "packing": {
+    "actual_suction_verified": false,
+    "centering_translation_m": [
+      0.04500000000000004,
+      0.04500000000000004
+    ],
+    "crush_load_capacity_verified": false,
+    "edge_margin_m": 0.01,
+    "floor_area_utilization": 0.6719999999999999,
+    "floor_rectangles": [
+      {
+        "d": 0.32,
+        "stack_id": "stack_01",
+        "w": 0.42,
+        "x": 0.05500000000000004,
+        "y": 0.05500000000000004
+      },
+      {
+        "d": 0.32,
+        "stack_id": "stack_02",
+        "w": 0.42,
+        "x": 0.525,
+        "y": 0.05500000000000004
+      },
+      {
+        "d": 0.32,
+        "stack_id": "stack_03",
+        "w": 0.42,
+        "x": 0.05500000000000004,
+        "y": 0.42500000000000004
+      },
+      {
+        "d": 0.32,
+        "stack_id": "stack_04",
+        "w": 0.42,
+        "x": 0.525,
+        "y": 0.42500000000000004
+      }
+    ],
+    "global_optimum_claimed": false,
+    "inferred_by_vlm": false,
+    "inter_stack_gap_m": 0.05,
+    "max_cargo_height_m": 1.2,
+    "method": "deterministic reserved-floor and equal-footprint arrival-order stacking heuristic",
+    "need_reobserve_after_each_transfer": true,
+    "order": [
+      "box_16",
+      "box_04",
+      "box_08",
+      "box_12",
+      "box_03",
+      "box_07",
+      "box_11",
+      "box_15",
+      "box_02",
+      "box_06",
+      "box_10",
+      "box_14",
+      "box_13",
+      "box_01",
+      "box_05",
+      "box_09"
+    ],
+    "packing_collision_geometry": "full cuboids; static pallet support represented by nominal top rectangle",
+    "pallet_dimensions_m": [
+      1.0,
+      0.8,
+      0.15
+    ],
+    "physics_executed": false,
+    "placements": [
+      {
+        "box_id": "box_16",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          0.18500000000000005,
+          0.265
+        ],
+        "stack_id": "stack_04",
+        "support_id": "goal_pallet",
+        "top_face_center_goal_m": [
+          0.235,
+          0.18500000000000005,
+          0.38
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_04",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          0.265
+        ],
+        "stack_id": "stack_01",
+        "support_id": "goal_pallet",
+        "top_face_center_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          0.38
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_08",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          0.265
+        ],
+        "stack_id": "stack_02",
+        "support_id": "goal_pallet",
+        "top_face_center_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          0.38
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_12",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          0.265
+        ],
+        "stack_id": "stack_03",
+        "support_id": "goal_pallet",
+        "top_face_center_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          0.38
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_03",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          0.495
+        ],
+        "stack_id": "stack_01",
+        "support_id": "box_04",
+        "top_face_center_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          0.61
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_07",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          0.495
+        ],
+        "stack_id": "stack_02",
+        "support_id": "box_08",
+        "top_face_center_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          0.61
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_11",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          0.495
+        ],
+        "stack_id": "stack_03",
+        "support_id": "box_12",
+        "top_face_center_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          0.61
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_15",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          0.18500000000000005,
+          0.495
+        ],
+        "stack_id": "stack_04",
+        "support_id": "box_16",
+        "top_face_center_goal_m": [
+          0.235,
+          0.18500000000000005,
+          0.61
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_02",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          0.725
+        ],
+        "stack_id": "stack_01",
+        "support_id": "box_03",
+        "top_face_center_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          0.84
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_06",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          0.725
+        ],
+        "stack_id": "stack_02",
+        "support_id": "box_07",
+        "top_face_center_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          0.84
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_10",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          0.725
+        ],
+        "stack_id": "stack_03",
+        "support_id": "box_11",
+        "top_face_center_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          0.84
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_14",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          0.18500000000000005,
+          0.725
+        ],
+        "stack_id": "stack_04",
+        "support_id": "box_15",
+        "top_face_center_goal_m": [
+          0.235,
+          0.18500000000000005,
+          0.84
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_13",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          0.18500000000000005,
+          0.955
+        ],
+        "stack_id": "stack_04",
+        "support_id": "box_14",
+        "top_face_center_goal_m": [
+          0.235,
+          0.18500000000000005,
+          1.07
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_01",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          0.955
+        ],
+        "stack_id": "stack_01",
+        "support_id": "box_02",
+        "top_face_center_goal_m": [
+          -0.235,
+          -0.18499999999999997,
+          1.07
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_05",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          0.955
+        ],
+        "stack_id": "stack_02",
+        "support_id": "box_06",
+        "top_face_center_goal_m": [
+          0.235,
+          -0.18499999999999997,
+          1.07
+        ],
+        "yaw_goal_rad": 0.0
+      },
+      {
+        "box_id": "box_09",
+        "center_of_mass_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "dimensions_m": [
+          0.42,
+          0.32,
+          0.23
+        ],
+        "footprint_goal_m": [
+          0.42,
+          0.32
+        ],
+        "mass_kg": 0.7,
+        "mass_upper_bound_kg": 0.7,
+        "position_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          0.955
+        ],
+        "stack_id": "stack_03",
+        "support_id": "box_10",
+        "top_face_center_goal_m": [
+          -0.235,
+          0.18500000000000005,
+          1.07
+        ],
+        "yaw_goal_rad": 0.0
+      }
+    ],
+    "robot_reach_verified": false,
+    "search_nodes": 5,
+    "stacks": [
+      {
+        "box_ids": [
+          "box_04",
+          "box_03",
+          "box_02",
+          "box_01"
+        ],
+        "footprint_m": [
+          0.32,
+          0.42
+        ],
+        "height_m": 0.92,
+        "stack_id": "stack_01"
+      },
+      {
+        "box_ids": [
+          "box_08",
+          "box_07",
+          "box_06",
+          "box_05"
+        ],
+        "footprint_m": [
+          0.32,
+          0.42
+        ],
+        "height_m": 0.92,
+        "stack_id": "stack_02"
+      },
+      {
+        "box_ids": [
+          "box_12",
+          "box_11",
+          "box_10",
+          "box_09"
+        ],
+        "footprint_m": [
+          0.32,
+          0.42
+        ],
+        "height_m": 0.92,
+        "stack_id": "stack_03"
+      },
+      {
+        "box_ids": [
+          "box_16",
+          "box_15",
+          "box_14",
+          "box_13"
+        ],
+        "footprint_m": [
+          0.32,
+          0.42
+        ],
+        "height_m": 0.92,
+        "stack_id": "stack_04"
+      }
+    ],
+    "total_cargo_volume_m3": 0.494592,
+    "validation": {
+      "passed": true,
+      "errors": [],
+      "placement_count": 16,
+      "full_rectangular_support_required": true,
+      "centered_COM_proxy_checked": true,
+      "source_specification_crosschecked": true,
+      "dynamics_or_crush_strength_validated": false
+    }
+  },
+  "provider": "deterministic_rule_baseline",
+  "schema": "depallet.scenario_rule_plan.v1",
+  "simulation_oracle_world": true
+}

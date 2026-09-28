@@ -1,0 +1,42 @@
+{
+  "schema": "ondevice_cobot.original_command.v1",
+  "guard_wall_seconds": 7200.0,
+  "run_task_arguments": [
+    "--scenario",
+    "/home/jclee/workspace/data/depallet_isaac_p0/scenario-suite-v1/v1_uniform_box16_first_box13_early_final_layer_v1/scenario.json",
+    "--max-transfers",
+    "16",
+    "--inspection-view",
+    "wrist_pallet_v1",
+    "--survey-scope",
+    "highest_layer",
+    "--survey-candidate",
+    "top_180_clear",
+    "--robot-collision-profile",
+    "link24_hull_margin10mm",
+    "--payload-cover-profile",
+    "grid10x7x7",
+    "--transport-overhead-m",
+    ".20",
+    "--camera-rig",
+    "overhead_wrist_v2",
+    "--motion-profile",
+    "brisk",
+    "--preview-hz",
+    "1",
+    "--recording-compression-level",
+    "1",
+    "--recording-workers",
+    "2",
+    "--record-rollout",
+    "--max-steps",
+    "432000",
+    "--frames",
+    "54000"
+  ],
+  "guard_mode": {
+    "allow_shared_gpu": true,
+    "parallel_slot": 0
+  },
+  "source_run": "20260921-current/physical-v1-link24-box13early-full16-overhead20-observerfinalize-repeat-v1"
+}

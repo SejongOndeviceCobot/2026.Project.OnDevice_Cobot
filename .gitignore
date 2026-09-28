@@ -1,0 +1,16 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv/
+.local/
+cache/
+data/
+runs/
+*.log
+*.mp4
+*.usdc
+*.usd
+*.usda
+*.pt
+*.pth
+*.safetensors
