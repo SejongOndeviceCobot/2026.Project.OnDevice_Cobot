@@ -33,6 +33,23 @@ REPACKAGED_EVALUATOR_SHA256 = "305a3c43214b6fdc7d960f51246c7285d89e4249f4a8bde71
 REPACKAGED_AUDIT_SUMMARY_SHA256 = "0c7785b27679667c52f183938df0ad91c887298949c4362bffd10d9d46d8d816"
 REPACKAGED_RUN = "full-20260927T192336_405591Z"
 SOURCE_RUN = "20260921-current/physical-v1-link24-box13early-full16-overhead20-observerfinalize-repeat-v1"
+# Immutable receipts for the completed modular run and its separate CPU audit.
+MODULAR_RUN = "full-20260928T191017_646556Z"
+MODULAR_TASK_RESULT_SHA256 = "bac1b97a9b1ea85fba199bab9fdea01244a054a0a991c6a995a54f36e65e2c97"
+MODULAR_EXIT_SHA256 = "1bfcecd901a0fcaea9baaaee27b6988bb4ef5e2dd07162cd88bc8de9853ba8a5"
+MODULAR_SOURCE_MANIFEST_SHA256 = "c54eb92b5f5fe54fc29ba7729fd79b02c65e6e2c73e0e0b73510943e6e0f2de3"
+MODULAR_PREFLIGHT_SHA256 = "23541596663ebf9cb37dfea945985bbf81f939803a820be44d2b4defc259f48f"
+MODULAR_AUDIT_SUMMARY_SHA256 = "4b9a90f5ea2bd5156eab15e2b2c60619324982e90c446fd16ed384105f44156a"
+MODULAR_FULL_AUDIT_SHA256 = "12f440c47666fd1c40d6bdee42ab0ceb8d1ad3ec6ae705ed09c9089b7cc8f854"
+MODULAR_EVALUATOR_SHA256 = "985845fd8ace574fdba8d79519ac186bd447824c7dc19220d8270645d52c7e49"
+MODULAR_AUDIT_CHECKS = 490
+MODULAR_RECEIPTS = (
+    "evidence/modular-full16-task-result.json",
+    "evidence/modular-full16-exit.json",
+    "evidence/modular-full16-source-manifest.json",
+    "evidence/modular-full16-preflight.json",
+    "evidence/modular-full16-audit-summary.json",
+)
 SHA256_PATTERN = re.compile(r"[0-9a-f]{64}\Z")
 
 
@@ -381,6 +398,175 @@ def verify_repackaged_run(root: Path, order: list[str]) -> None:
                                 file_index(published, "published-source.json"), order)
 
 
+def modular_receipts_present(root: Path) -> bool:
+    """All five completed modular receipts are required in every release checkout."""
+    found = [relative for relative in MODULAR_RECEIPTS
+             if (root / relative).exists() or (root / relative).is_symlink()]
+    require(len(found) == len(MODULAR_RECEIPTS),
+            "모듈 실행 영수증 5개가 모두 필요")
+    return True
+
+
+def verify_modular_contract(exit_receipt: dict, result: dict, source_manifest: dict,
+                            preflight: dict, order: list[str], run_id: str) -> None:
+    """Bind one guarded modular run to its command, source inventory and 16 transfers."""
+    require(exit_receipt.get("status") == "success" and
+            type(exit_receipt.get("child_returncode")) is int and
+            exit_receipt["child_returncode"] == 0 and
+            exit_receipt.get("gpu_launch_performed") is True,
+            "모듈 실행 종료가 성공이 아님")
+    output = exit_receipt.get("output")
+    require(isinstance(output, str) and PurePosixPath(output).is_absolute() and
+            PurePosixPath(output).name == run_id,
+            "모듈 실행 경로 불일치")
+    cleanup = exit_receipt.get("cleanup")
+    require(isinstance(cleanup, dict) and cleanup.get("remaining_pids") == [],
+            "모듈 실행 자식 프로세스 정리 기록 불일치")
+    require(preflight.get("gpu_launch_performed") is True and
+            type(preflight.get("child_pid")) is int and preflight["child_pid"] > 0 and
+            preflight["child_pid"] == exit_receipt.get("child_pid"),
+            "모듈 실행 사전 기록과 종료 PID 불일치")
+    command = preflight.get("command")
+    require(isinstance(command, list) and len(command) >= 5 and
+            all(isinstance(part, str) for part in command),
+            "모듈 실행 명령 없음")
+    runner = PurePosixPath(command[1])
+    require(runner.is_absolute() and
+            runner.parts[-3:] == ("2026.Project.OnDevice_Cobot-org", "scripts", "run_task.py") and
+            PurePosixPath(command[0]).is_absolute(),
+            "모듈 실행 명령의 진입점 불일치")
+
+    def option(name: str) -> str:
+        require(command.count(name) == 1, f"모듈 실행 옵션 누락 또는 중복: {name}")
+        index = command.index(name)
+        require(index + 1 < len(command) and not command[index + 1].startswith("--"),
+                f"모듈 실행 옵션 값 없음: {name}")
+        return command[index + 1]
+
+    require(option("--max-transfers") == "16" and command.count("--record-rollout") == 1,
+            "모듈 실행의 16개 이송 또는 기록 옵션 불일치")
+    scenario = PurePosixPath(option("--scenario"))
+    require(scenario.is_absolute() and scenario.name == "scenario.json",
+            "모듈 실행 시나리오 경로 불일치")
+    expected_options = {
+        "--inspection-view": "wrist_pallet_v1",
+        "--survey-scope": "highest_layer",
+        "--survey-candidate": "top_180_clear",
+        "--robot-collision-profile": "link24_hull_margin10mm",
+        "--payload-cover-profile": "grid10x7x7",
+        "--camera-rig": "overhead_wrist_v2",
+        "--motion-profile": "brisk",
+    }
+    for name, expected in expected_options.items():
+        require(option(name) == expected, f"모듈 실행 옵션 불일치: {name}")
+    require(float(option("--transport-overhead-m")) == 0.2,
+            "모듈 실행 이송 높이 옵션 불일치")
+
+    require(source_manifest.get("captured_before_simulation_start") is True,
+            "모듈 실행 전 소스 스냅샷 표시 누락")
+    source_files = file_index(source_manifest, "modular-full16-source-manifest.json")
+    scripts = {"scripts/run_task.py", "scripts/guarded_run.py", "scripts/curobo_worker.py"}
+    package_inits = {"src/depallet/__init__.py"}
+    package_inits.update(f"src/depallet/{name}/__init__.py" for name in
+                         ("scene", "observation", "planning", "motion", "manipulation",
+                          "integration", "validation", "runtime"))
+    require(len(source_files) == 66 and scripts | package_inits <= source_files.keys() and
+            all(path in scripts or path.startswith("src/depallet/") for path in source_files) and
+            all(not PurePosixPath(path).is_absolute() and
+                all(part not in (".", "..") for part in PurePosixPath(path).parts)
+                for path in source_files),
+            "모듈 실행 소스 66개 목록 불일치")
+
+    verify_result_contract(result, order)
+    contract = result["runtime_contract"]
+    command_contract_keys = {
+        "--inspection-view": "inspection_view",
+        "--survey-scope": "survey_scope",
+        "--survey-candidate": "survey_candidate",
+        "--robot-collision-profile": "robot_collision_profile",
+        "--payload-cover-profile": "payload_cover_profile",
+        "--camera-rig": "camera_rig",
+        "--motion-profile": "motion_profile",
+    }
+    require(all(contract.get(key) == option(flag)
+                for flag, key in command_contract_keys.items()) and
+            contract.get("transport_overhead_m") == 0.2,
+            "모듈 실행 명령과 최종 실행 계약 불일치")
+    for index, transfer in enumerate(result["transfer_results"], start=1):
+        expected = f"{output}/transfers/{index:02d}_{transfer['box_id']}"
+        require(transfer.get("cycle_directory") == expected,
+                f"모듈 실행과 이송 경로 불일치: {index}")
+        require(all(isinstance(transfer.get(key), str) and
+                    SHA256_PATTERN.fullmatch(transfer[key]) is not None
+                    for key in ("execution_sha256", "snapshot_sha256")),
+                f"모듈 실행 이송 원본 해시 누락: {index}")
+
+
+def verify_modular_audit_summary(summary: dict, order: list[str], *, run_id: str,
+                                 task_result_sha256: str, full_audit_sha256: str,
+                                 evaluator_sha256: str, expected_checks: int) -> None:
+    """Check a separate modular CPU audit, without inheriting the old 473/490 counts."""
+    require(summary.get("schema") == "ondevice_cobot.full16_audit_summary.v1" and
+            summary.get("source_run") == run_id,
+            "모듈 실행 감사 요약 출처 불일치")
+    require(summary.get("task_result_sha256") == task_result_sha256 and
+            summary.get("full_audit_sha256") == full_audit_sha256 and
+            summary.get("evaluator_sha256") == evaluator_sha256 and
+            summary.get("scenario_sha256") == SCENARIO_SHA256 and
+            summary.get("task_plan_sha256") == RULE_PLAN_SHA256,
+            "모듈 실행 감사 원본·평가기·입력 SHA256 불일치")
+    require(summary.get("audit_passed") is True and
+            summary.get("task_complete_verified") is True and
+            summary.get("verified_commits") == order and
+            type(expected_checks) is int and expected_checks > 0 and
+            summary.get("passed_checks") == expected_checks and
+            summary.get("total_checks") == expected_checks,
+            "모듈 실행 감사의 16개 완료 또는 검사 수 불일치")
+    require(summary.get("perception_source") == "simulation_oracle" and
+            summary.get("full_perception_pipeline_validated") is False and
+            summary.get("physics_launched_by_audit") is False and
+            summary.get("inference_executed_by_audit") is False,
+            "모듈 실행 감사의 oracle 또는 CPU 검증 범위 불일치")
+
+
+def verify_modular_run(root: Path, order: list[str]) -> None:
+    hashes = (MODULAR_TASK_RESULT_SHA256, MODULAR_EXIT_SHA256,
+              MODULAR_SOURCE_MANIFEST_SHA256, MODULAR_PREFLIGHT_SHA256,
+              MODULAR_AUDIT_SUMMARY_SHA256, MODULAR_FULL_AUDIT_SHA256,
+              MODULAR_EVALUATOR_SHA256)
+    require(MODULAR_RUN.startswith("full-") and
+            all(SHA256_PATTERN.fullmatch(value) is not None for value in hashes) and
+            MODULAR_AUDIT_CHECKS > 0,
+            "모듈 실행 성공·감사 확정 후 TODO 검증 상수를 채워야 함")
+    result, exit_receipt, source_manifest, preflight, summary = (
+        pinned_json(root, relative, digest)
+        for relative, digest in zip(MODULAR_RECEIPTS, hashes[:5]))
+    verify_modular_contract(exit_receipt, result, source_manifest, preflight, order,
+                            MODULAR_RUN)
+    verify_modular_audit_summary(
+        summary, order, run_id=MODULAR_RUN,
+        task_result_sha256=MODULAR_TASK_RESULT_SHA256,
+        full_audit_sha256=MODULAR_FULL_AUDIT_SHA256,
+        evaluator_sha256=MODULAR_EVALUATOR_SHA256,
+        expected_checks=MODULAR_AUDIT_CHECKS,
+    )
+
+
+def verify_release_source_equivalence(root: Path, source_manifest: dict) -> None:
+    """Opt-in: compare the currently editable tree to the captured modular run."""
+    relative = "evidence/modular-source-manifest.json"
+    current_manifest = json.loads(repository_file(root, relative).read_text(encoding="utf-8"))
+    require(isinstance(current_manifest, dict) and
+            current_manifest.get("schema") == "ondevice_cobot.modular_source.v1",
+            "현재 모듈 소스 manifest 스키마 불일치")
+    released = file_index(source_manifest, "modular-full16-source-manifest.json")
+    current = file_index(current_manifest, relative)
+    require(current == released, "현재 모듈 소스와 실행 당시 소스 manifest 불일치")
+    for path, digest in released.items():
+        require(sha256_file(repository_file(root, path)) == digest,
+                f"현재 모듈 소스와 실행 당시 SHA256 불일치: {path}")
+
+
 def verify_repository(root: Path, *, check_current: bool = False) -> tuple[int, int]:
     root = root.resolve()
     require(root.is_dir(), f"저장소 폴더 없음: {root}")
@@ -396,6 +582,8 @@ def verify_repository(root: Path, *, check_current: bool = False) -> tuple[int, 
     repackaged_summary = pinned_json(root, "evidence/repackaged-full16-audit-summary.json",
                                      REPACKAGED_AUDIT_SUMMARY_SHA256)
     verify_repackaged_audit_summary(repackaged_summary, order)
+    modular_receipts_present(root)
+    verify_modular_run(root, order)
     return source_count, len(order)
 
 
@@ -405,18 +593,30 @@ def main(argv: list[str] | None = None) -> int:
                         help="검증할 저장소 루트 (기본값: 이 스크립트의 상위 저장소)")
     parser.add_argument("--check-current", action="store_true",
                         help="현재 모듈식 src/와 실행 스크립트의 manifest·import 일치 검사 (물리 재실행 증명 아님)")
+    parser.add_argument("--check-release-source", action="store_true",
+                        help="완료된 모듈 실행의 소스 66개와 현재 체크아웃 동등성 검사")
     args = parser.parse_args(argv)
     try:
-        source_count, box_count = verify_repository(args.root, check_current=args.check_current)
+        source_count, box_count = verify_repository(
+            args.root, check_current=args.check_current or args.check_release_source)
+        if args.check_release_source:
+            source_manifest = pinned_json(
+                args.root, MODULAR_RECEIPTS[2], MODULAR_SOURCE_MANIFEST_SHA256)
+            verify_release_source_equivalence(args.root, source_manifest)
     except (EvidenceError, OSError, ValueError, TypeError, KeyError, SyntaxError, tarfile.TarError) as error:
         print(f"근거 검증 실패: {error}", file=sys.stderr)
         return 1
     print(f"근거 검증 통과: 보관 소스 {source_count}개 SHA256, V1 예시 {box_count}개, "
           "원본·재패키징 저장 결과 각각 16/16, 원본 CPU 감사 473/473, "
-          "새 실행 CPU 감사 490/490 (시뮬레이터 정답 입력).")
+          "재패키징 실행 CPU 감사 490/490 (시뮬레이터 정답 입력).")
+    print(f"모듈 실행 저장 결과 16/16 및 별도 CPU 감사 "
+          f"{MODULAR_AUDIT_CHECKS}/{MODULAR_AUDIT_CHECKS} 검증 통과 "
+          "(시뮬레이터 정답 입력).")
     if args.check_current:
         print("현재 모듈식 소스 manifest·import 검사 통과. "
-              "보관된 두 성공 실행은 재구성 전 코드의 결과이며, 이 검사는 물리 재실행이 아닙니다.")
+              "이 검사는 물리 재실행이나 과거 실행 소스와의 동등성 증명이 아닙니다.")
+    if args.check_release_source:
+        print("현재 모듈 소스 66개가 저장된 모듈 실행의 시작 전 소스와 SHA256으로 일치합니다.")
     return 0
 
 

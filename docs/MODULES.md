@@ -15,6 +15,20 @@
 
 기본 흐름은 **장면 → 관측 → 작업 계획 → 동작 계획 → 이송 → 판정**이며 `runtime/`이 이를 반복합니다. `integration/`은 필요한 외부 구현과 단계 사이의 연결부입니다. 예제 입력은 `examples/v1_uniform/`, 실행 결과는 Git 밖의 `runs/`에 있습니다.
 
-16/16 기준선은 시뮬레이터 정답값으로 대상을 선택한 실행입니다. 모델 연결 파일이 있어도 모델 기반 종단 간 성공을 뜻하지 않습니다. 원본 57개 Python 파일은 `evidence/full16-source.tar.gz`에 보존돼 있고, 현재 폴더 구조의 검증 상태는 [결과 기록](RESULTS.md)에 분리해 적습니다.
+개발 시 사용한 로컬 관제판(`http://localhost:18767/pipeline`)의 9개 단계에서 코드를 찾을 때는 아래 대응을 사용하세요. 한 단계가 여러 패키지를 거칠 수 있습니다.
+
+| 관제판 단계 | 주로 볼 패키지 |
+| --- | --- |
+| 장면·난이도 | `scene/` |
+| RGB-D 관측 | `observation/` |
+| 인스턴스 분할 | `observation/`, `integration/` |
+| 자세·기하 | `observation/`, `motion/` |
+| 흡착 후보 | `observation/`, `manipulation/` |
+| 순서·배치 계획 | `planning/`, `scene/` |
+| 동작 계획·실행 | `motion/`, `manipulation/` |
+| 물리 grasp·release | `manipulation/`, `validation/` |
+| 평가·데이터 | `validation/`, `runtime/` |
+
+이 대응은 **수정 위치 안내**이지 9단계 성공 판정이 아닙니다. 16/16 기준선은 시뮬레이터 정답값(oracle)으로 대상을 선택했으며, 독립 분할·자세 추정 모델과 학습 데이터 수용은 검증되지 않았습니다. 원본 57개 Python 파일은 `evidence/full16-source.tar.gz`에 보존돼 있고, 현재 폴더 구조의 검증 상태는 [결과 기록](RESULTS.md)에 분리해 적습니다.
 
 변경 후에는 [기여 안내](../CONTRIBUTING.md)의 CPU 검사를 먼저 실행하세요. 실행 경로를 바꿨다면 한 상자 Smoke와 전체 16개 결과의 `task-result.json`을 새로 확인해야 합니다.

@@ -1,8 +1,8 @@
 # OnDevice Cobot: 팔레트 이송 시뮬레이션
 
-세종대 컨소시엄의 코드 협업을 위한 저장소입니다. 검증된 기준선은 **V1 균일 상자 16개를 Isaac Sim에서 연속 이송한 실행**입니다. 2026-09-21 원본과 2026-09-28(KST) 같은 호스트의 새 체크아웃에서 각각 16/16을 완료했습니다. 두 실행의 당시 Python 파일 57개 해시는 일치하며 결과 요약은 `evidence/`에 있습니다. 두 번째 실행은 기존 Isaac Sim·cuRobo 가상환경과 외부 자산을 재사용했습니다.
+세종대 컨소시엄의 코드 협업을 위한 저장소입니다. V1 균일 상자 16개를 Isaac Sim에서 연속 이송했습니다. **재배치 전 코드**는 2026-09-21 원본과 2026-09-28(KST) 새 체크아웃에서 각각 16/16을 완료했고, 당시 Python 파일 57개 해시가 일치합니다.
 
-현재 소스는 기능별로 `src/depallet/`에 정리했습니다. 위 16/16 기록은 **재배치 전 코드**의 근거입니다. 재배치한 코드의 GPU 실행 결과는 [결과 기록](docs/RESULTS.md)에서 별도로 확인하세요. 기준선의 대상 인식은 **시뮬레이터 정답값(oracle)** 을 사용했습니다. 실제 로봇이나 독립 RGB-D 인지 파이프라인 성공을 뜻하지 않습니다.
+현재 소스를 기능별 `src/depallet/`로 정리한 뒤 2026-09-29(KST) 같은 호스트에서 16/16을 다시 완료했습니다. 실행 전 Python 66개 파일의 해시가 현재 manifest와 일치했습니다. 첫 모듈식 전체 시도는 1/16에서 실패했고 재시도에 성공했습니다. 기존 Isaac Sim·cuRobo 가상환경과 외부 자산을 재사용했으며, 세 완료 실행 모두 **시뮬레이터 정답값(oracle)** 으로 대상을 선택했습니다. 다른 연구실의 새 설치, 독립 RGB-D 인지, 실제 로봇 성공을 뜻하지 않습니다. 실행별 근거와 한계는 [결과 기록](docs/RESULTS.md)에 있습니다.
 
 ## 시작
 
@@ -20,12 +20,13 @@ cd "$JCLEE_WORKSPACE/repos/own/2026.Project.OnDevice_Cobot"
 source ./env.sh
 python3 tools/verify_evidence.py
 python3 tools/verify_evidence.py --check-current
+python3 tools/verify_evidence.py --check-release-source
 python3 tools/prepare_example.py
 python3 -m unittest discover -s tests -v
 python3 -m compileall -q src scripts tools
 ```
 
-`verify_evidence.py`의 기본 검사는 보존된 과거 실행 자료를 확인합니다. `--check-current`는 현재 모듈 소스·실행 스크립트가 `evidence/modular-source-manifest.json`의 목록·해시와 일치하고, 이전 평면 import가 남지 않았는지 확인합니다. 둘 다 물리 시뮬레이션 재실행은 아닙니다. GPU 실행에는 허가된 H2017·VGP20 외부 자산과 cuRobo checkout이 필요합니다.
+`verify_evidence.py`는 세 번의 완료 실행에 저장된 결과와 해시를 확인합니다. `--check-current`는 현재 모듈 소스의 목록·해시·import를, `--check-release-source`는 현재 소스 66개가 모듈식 성공 실행 당시와 같은지를 검사합니다. 이 검사는 물리 시뮬레이션 재실행이 아닙니다. GPU 실행에는 허가된 H2017·VGP20 외부 자산과 cuRobo checkout이 필요합니다.
 
 ```bash
 CUROBO_SOURCE="$JCLEE_WORKSPACE/repos/external/github.com/NVlabs/curobo"
