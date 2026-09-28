@@ -1,0 +1,269 @@
+{
+  "schema": "ondevice_cobot.modular_source.v1",
+  "files": [
+    {
+      "path": "src/depallet/__init__.py",
+      "sha256": "6f6aa1adb606273016f4fd220bf2ba850b5319fdcd6d4b5c691a657845c4256e"
+    },
+    {
+      "path": "src/depallet/integration/__init__.py",
+      "sha256": "bbd5a5c0bfd677a1c673364734e104b473dd9150c06bc7bf573c8baea9e5bccd"
+    },
+    {
+      "path": "src/depallet/integration/cutamp_execution_bridge.py",
+      "sha256": "530274ca50b3f8f3d3729c0cfeab8f5cd4d7a1aeaf6b9c56b164539c8f2056af"
+    },
+    {
+      "path": "src/depallet/integration/cutamp_grasp_bindings.py",
+      "sha256": "58ef05fbcd36f2faf48e7b5150ffceaf81e3dac575649a60c5a373a754c3d424"
+    },
+    {
+      "path": "src/depallet/integration/modular_pick_bridge.py",
+      "sha256": "5c9c693217a0d3f9d377208e4299f982da1b12ed6fbdc0d820a6a79d1946124b"
+    },
+    {
+      "path": "src/depallet/integration/nested_ai.py",
+      "sha256": "c792b25a20f828050149f69e78bce90a9f8d3d4eb094ae855e8111ee5f518b36"
+    },
+    {
+      "path": "src/depallet/manipulation/__init__.py",
+      "sha256": "970a40e6d3c69ecf414c30315d98c39fd9dcb09b7c1c31c7452a8eacfa4555e7"
+    },
+    {
+      "path": "src/depallet/manipulation/contact_anchor.py",
+      "sha256": "65237b7ff60552bcd70d2b217ffcd3ecb2d878b477057947be6cf9810764c9f2"
+    },
+    {
+      "path": "src/depallet/manipulation/h2017_execution.py",
+      "sha256": "eeaa342b4c7791510200ae8019c75c6da362b52d6b005bc94dc6f79e47c8e6b8"
+    },
+    {
+      "path": "src/depallet/manipulation/payload_cover_profiles.py",
+      "sha256": "342a851a5bbf877132c02092f1ba0cd21419bbe0ce1b137e3e1b8b3b2bacc27f"
+    },
+    {
+      "path": "src/depallet/manipulation/payload_self_contact.py",
+      "sha256": "30cf3928f7daf36f1ea83f45b3613df15aea1b52564cbd367ae0cb0c78cb2adb"
+    },
+    {
+      "path": "src/depallet/manipulation/vacuum_compliance.py",
+      "sha256": "73460e1e1a127bbaf994bcc626cf43680d28b5e55f9400116563cfe97e3bf3fa"
+    },
+    {
+      "path": "src/depallet/manipulation/vacuum_patch.py",
+      "sha256": "07dd757d29828d8cc32c631483bc9b37936ea644fc86d55a944c99dda67f4341"
+    },
+    {
+      "path": "src/depallet/manipulation/vgp20_surface.py",
+      "sha256": "2d8824befabb25ce77203f50f484c44a61d09289fd0bc5ab949b7743991a45e8"
+    },
+    {
+      "path": "src/depallet/motion/__init__.py",
+      "sha256": "0d04b0a5f95c66caf218cae8bdc3c83ae81ce292d23a089f5f1102e2fdcff03f"
+    },
+    {
+      "path": "src/depallet/motion/actual_contact_escape.py",
+      "sha256": "6c14c57d1c74621d5792e09548b350b5265287ca7182cb628f4a5c17a6bbd14d"
+    },
+    {
+      "path": "src/depallet/motion/contact_escape.py",
+      "sha256": "2454c535516f0cb3393e6dc72bb178c20d7d70d75d8443410e2312556925c71b"
+    },
+    {
+      "path": "src/depallet/motion/curobo_bridge.py",
+      "sha256": "44b97cf27664d9a0e5c5714dbd8c94964262053cab7df7d6d0df71b4649d2ac2"
+    },
+    {
+      "path": "src/depallet/motion/curobo_diagnostics.py",
+      "sha256": "8ab1c3b67d12727466fd6f9f7eceba9f9865b41db0faf97dad6f6d2d14bd5054"
+    },
+    {
+      "path": "src/depallet/motion/curobo_geometry.py",
+      "sha256": "ee4c2aaa99f89097355ac1535016cfe51e0e4a1b07182d0475ad1c0fe93a3745"
+    },
+    {
+      "path": "src/depallet/motion/curobo_motion_diagnostics.py",
+      "sha256": "cae0bcc72f45db2e4017e98385df56e12631209e30dcbea5d9f113079fdcc4ea"
+    },
+    {
+      "path": "src/depallet/motion/curobo_seed_repair.py",
+      "sha256": "bc2a68a252d508b7b348c6a7ba42680d0c7bb4c6f70e9dffc38795d3ca1ffdf8"
+    },
+    {
+      "path": "src/depallet/motion/nested_curobo.py",
+      "sha256": "67955afb4d01f177bd9fab3c69645686e35d280e2430924448397e23f85120af"
+    },
+    {
+      "path": "src/depallet/motion/payload_gravity.py",
+      "sha256": "04c43626ef81047c7d5e0d65452ba308bc68472c031b69f49c25837e94346b95"
+    },
+    {
+      "path": "src/depallet/motion/robot_collision_profiles.py",
+      "sha256": "87a144ebb1891f18192cda261eee6a417aecb8035b187cf0430b695f873e1ce4"
+    },
+    {
+      "path": "src/depallet/motion/urdf_fk.py",
+      "sha256": "18f7fdd3bb0eecfd734b5f3f1600dc8fc21049034d1b433d7b531be58102627e"
+    },
+    {
+      "path": "src/depallet/observation/__init__.py",
+      "sha256": "8ca3efca3a62a341c217346dac4156edc234c03d17550f5e5ffccc036ce469cf"
+    },
+    {
+      "path": "src/depallet/observation/camera_rig.py",
+      "sha256": "dc81683e619e5b09d10fb8dea6b0a1e44060e456bdb61ae1bd75e2e52103efe0"
+    },
+    {
+      "path": "src/depallet/observation/graspgen_vgp20_adapter.py",
+      "sha256": "bd720aa42b0da1bd36a382d17671cb12ebed2a18a2433426a0ad782b89ac6280"
+    },
+    {
+      "path": "src/depallet/observation/inspection_ai.py",
+      "sha256": "c5f188ba06bb136e1785959862e857446759c543323483b42a2c20b8cdeb7576"
+    },
+    {
+      "path": "src/depallet/observation/pallet_survey.py",
+      "sha256": "0803d6cd4fcd7e995b67ddcd85c8f4ca20ca199ead617a671802191aa47cda69"
+    },
+    {
+      "path": "src/depallet/observation/point2pose_adapter.py",
+      "sha256": "9c5cdf7562bcd5e25aeb0cb29ae99792bed1955abaf395c43bb6c8bccab5e20e"
+    },
+    {
+      "path": "src/depallet/observation/sensor_contract.py",
+      "sha256": "9b38f46291c4b786cb817162bd9fdbc7e2e83eef6d3d4796fd3d9b9439049990"
+    },
+    {
+      "path": "src/depallet/observation/survey_planning.py",
+      "sha256": "35c28ce0d272ee97c111eb79bc897768badf0d6bb1373064f781eef73d22fb91"
+    },
+    {
+      "path": "src/depallet/observation/wrist_inspection.py",
+      "sha256": "1a9bb452d5551ecfc43d393fa93b92698d0d685de959536a95ad724017b7f8d3"
+    },
+    {
+      "path": "src/depallet/planning/__init__.py",
+      "sha256": "afeb660e3abaa8e9de5547a20d4679b01c9320d19e7631d3b64551a8acc5c1fc"
+    },
+    {
+      "path": "src/depallet/planning/depallet_execution_plan.py",
+      "sha256": "80586274362833e98a3f3820ab6a5dbdc15d906efbdac88dea82685768f5bb66"
+    },
+    {
+      "path": "src/depallet/planning/motion_profiles.py",
+      "sha256": "154b2d46ace398eb60f0fae7ebff1694ff4dc65c9b353b7757724ce1380dd4b1"
+    },
+    {
+      "path": "src/depallet/planning/motion_retry.py",
+      "sha256": "f118a877cd46045939809468d24c2ea1e95502da18bbe72e5554dd066149311b"
+    },
+    {
+      "path": "src/depallet/planning/multi_transfer_planning.py",
+      "sha256": "2bcc61ec22540961157cd9e5870d1f9eacf6c1458a4fe66d61492aa7c728c303"
+    },
+    {
+      "path": "src/depallet/planning/planning_requests.py",
+      "sha256": "a27c96a49492cc8a50d8561a4de0777765cd8c74a1d07c61ea50b14104f9f06c"
+    },
+    {
+      "path": "src/depallet/planning/upright_seed_search.py",
+      "sha256": "7dfbda6230e3234061519622e67c12bf2b6e3587fb11f84a5337a9916529a2bc"
+    },
+    {
+      "path": "src/depallet/runtime/__init__.py",
+      "sha256": "28bebe2bb03abe9b0ec11010090ba92270fdf503cf43ff4dae8edfa9f70b522b"
+    },
+    {
+      "path": "src/depallet/runtime/frame_clock.py",
+      "sha256": "24ae2927b1b255e6918ec00558c5d10302e23e15cb0c0e6e96f447492d8e3b8f"
+    },
+    {
+      "path": "src/depallet/runtime/live_view.py",
+      "sha256": "dfcde33fa8e64d6c0b7bada79c5c0d9966fa6bed44e29d8330ec71f139f73de3"
+    },
+    {
+      "path": "src/depallet/runtime/observer_recording.py",
+      "sha256": "be1f38151a956d8ef0b375c4df5607e1e47914ad99319f724422347b2115ac75"
+    },
+    {
+      "path": "src/depallet/runtime/recording.py",
+      "sha256": "ccc16ddcf74982b2c2ae572022bbe57ff9db733b71d354047f712c32d268d254"
+    },
+    {
+      "path": "src/depallet/runtime/rollout_trace.py",
+      "sha256": "2ba3a5371ae558e8ceade4a8570275da40c468725f440b220df76e06e65c4adf"
+    },
+    {
+      "path": "src/depallet/runtime/runtime_costs.py",
+      "sha256": "2be522a82c50cc3bd57592f58211c058fdc93cf96c347c8d28bcebd34a4d6fbf"
+    },
+    {
+      "path": "src/depallet/runtime/runtime_timing.py",
+      "sha256": "bd0e0944fd2f0ab19c43feab554762123254b87ccdaf94b6617a7e27470a2474"
+    },
+    {
+      "path": "src/depallet/runtime/task_runtime.py",
+      "sha256": "e7c44f9de3034c9de6e092c63fa068a4198bba17752089e5a921ed84a843ee98"
+    },
+    {
+      "path": "src/depallet/scene/__init__.py",
+      "sha256": "ea854d744da0da10d21424e0d3c77e818cfea55a3d9f0c05e6fbefd1c42772c8"
+    },
+    {
+      "path": "src/depallet/scene/depallet_scene_export.py",
+      "sha256": "0a1f95a48e6e78338d143536bd235625f40bbeaff9ef732b21f5c323bf3a0220"
+    },
+    {
+      "path": "src/depallet/scene/photo_scene.py",
+      "sha256": "b5ef7da9f725794aba0c56c0d0bcbeb453ba83a1cb518b2f7c03d1d349e644d6"
+    },
+    {
+      "path": "src/depallet/scene/scenario_suite.py",
+      "sha256": "f0c6b26dd19fc30d77023ee404c657d02c719dc742a56daa455e10e8e947fbe8"
+    },
+    {
+      "path": "src/depallet/scene/task_planning.py",
+      "sha256": "c528f5818dd1c376f85ac2ac55dcb1b544d68dedc3d9f96901e42546fb1d36b0"
+    },
+    {
+      "path": "src/depallet/validation/__init__.py",
+      "sha256": "07bd09af4a914637b1f7482d899f5e0587185f23a56cc2294eddc3f8b8846ab4"
+    },
+    {
+      "path": "src/depallet/validation/payload_candidate_validation.py",
+      "sha256": "23b6a56c30707f32ab8283556badd56db6ce01d5c8f3b2f6dec878485795b4cc"
+    },
+    {
+      "path": "src/depallet/validation/payload_gpu_audit.py",
+      "sha256": "c4d8e3d71daec8b3aa954a6c792f96de3a4d34f7cc5a9da2d217aa6ebce874e9"
+    },
+    {
+      "path": "src/depallet/validation/payload_upright.py",
+      "sha256": "7e2c9606056cf61a069162a99365e09feeaf210ed398e656805c49e28f193950"
+    },
+    {
+      "path": "src/depallet/validation/pregrasp_exit_preview.py",
+      "sha256": "7f2b2bdcf72421d62fe51012c4606f5e3bb410a6fcf640934bf88297a97317d4"
+    },
+    {
+      "path": "src/depallet/validation/source_stack_integrity.py",
+      "sha256": "908aa3547d54f7c91a6649ecc34c74516d2ad7fc52298d814ecec1bf394262c9"
+    },
+    {
+      "path": "src/depallet/validation/task_runtime_checks.py",
+      "sha256": "09bab8c4243eaaa3e10fca516c9b5f819f152bb014cb43c3adca9a5776e77146"
+    },
+    {
+      "path": "scripts/run_task.py",
+      "sha256": "06195232e78a4e5d4204d7c8adfd548b96aef8249d92b86fc318a50319f4c123"
+    },
+    {
+      "path": "scripts/guarded_run.py",
+      "sha256": "897a24369c21d6b778b29467cdde896631f5a79bbd38158df2ca5c0f17979f44"
+    },
+    {
+      "path": "scripts/curobo_worker.py",
+      "sha256": "d5b6ac516de8545d101f54cf4d171d56f4f4ef107b9fe45b5d7064751038cfe3"
+    }
+  ]
+}

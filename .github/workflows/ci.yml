@@ -12,6 +12,8 @@ jobs:
           python-version: '3.12'
       - name: Check archived release
         run: python3 tools/verify_evidence.py
+      - name: Check current modular source
+        run: python3 tools/verify_evidence.py --check-current
       - name: Run CPU tests
         run: python3 -m unittest discover -s tests -v
       - name: Parse Python sources

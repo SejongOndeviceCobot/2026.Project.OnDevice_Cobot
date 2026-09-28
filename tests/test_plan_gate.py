@@ -9,7 +9,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from task_runtime import validate_runtime_plan_catalog  # noqa: E402
+from depallet.runtime.task_runtime import validate_runtime_plan_catalog  # noqa: E402
 
 
 class PlanGateTests(unittest.TestCase):

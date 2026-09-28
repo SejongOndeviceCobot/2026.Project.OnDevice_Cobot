@@ -1,0 +1,109 @@
+{
+  "command": [
+    "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org/venv/bin/python",
+    "/home/jclee/workspace/repos/own/2026.Project.OnDevice_Cobot-org/scripts/run_task.py",
+    "--scenario",
+    "/DATA/jclee/workspace/data/depallet_isaac_p0/scenario-suite-v1/v1_uniform_box16_first_box13_early_final_layer_v1/scenario.json",
+    "--max-transfers",
+    "16",
+    "--inspection-view",
+    "wrist_pallet_v1",
+    "--survey-scope",
+    "highest_layer",
+    "--survey-candidate",
+    "top_180_clear",
+    "--robot-collision-profile",
+    "link24_hull_margin10mm",
+    "--payload-cover-profile",
+    "grid10x7x7",
+    "--transport-overhead-m",
+    ".20",
+    "--camera-rig",
+    "overhead_wrist_v2",
+    "--motion-profile",
+    "brisk",
+    "--preview-hz",
+    "1",
+    "--recording-compression-level",
+    "1",
+    "--recording-workers",
+    "2",
+    "--record-rollout",
+    "--max-steps",
+    "432000",
+    "--frames",
+    "54000"
+  ],
+  "seconds": 7200.0,
+  "samples": [
+    {
+      "unix_time": 1790622617.8284035,
+      "gpu": {
+        "index": 0,
+        "uuid": "GPU-507e10a3-7939-07a6-2153-43876f0ad326",
+        "total_mib": 97887,
+        "used_mib": 20,
+        "utilization": 0
+      },
+      "compute_apps": [],
+      "system_available_ram_bytes": null,
+      "reason": null,
+      "memory_thresholds_enforced": true,
+      "memory_override": null
+    },
+    {
+      "unix_time": 1790622618.9034054,
+      "gpu": {
+        "index": 0,
+        "uuid": "GPU-507e10a3-7939-07a6-2153-43876f0ad326",
+        "total_mib": 97887,
+        "used_mib": 20,
+        "utilization": 0
+      },
+      "compute_apps": [],
+      "system_available_ram_bytes": null,
+      "reason": null,
+      "memory_thresholds_enforced": true,
+      "memory_override": null
+    },
+    {
+      "unix_time": 1790622619.9970207,
+      "gpu": {
+        "index": 0,
+        "uuid": "GPU-507e10a3-7939-07a6-2153-43876f0ad326",
+        "total_mib": 97887,
+        "used_mib": 20,
+        "utilization": 0
+      },
+      "compute_apps": [],
+      "system_available_ram_bytes": null,
+      "reason": null,
+      "memory_thresholds_enforced": true,
+      "memory_override": null
+    }
+  ],
+  "gpu_launch_performed": true,
+  "cooperative_monitor_only": true,
+  "allow_shared_gpu": false,
+  "user_authorized_shared_memory_policy": false,
+  "parallel_slot": null,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "max_parallel_tasks": 1,
+  "device_growth_fallback_mib": 12288,
+  "runtime_cache": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org",
+  "mutable_environment": {
+    "XDG_CACHE_HOME": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org/xdg/cache",
+    "XDG_CONFIG_HOME": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org/xdg/config",
+    "XDG_DATA_HOME": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org/xdg/data",
+    "TMPDIR": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org/tmp",
+    "CUDA_CACHE_PATH": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org/cuda",
+    "__GL_SHADER_DISK_CACHE_PATH": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org/shader",
+    "ISAAC_P0_RUNTIME_CACHE": "/home/jclee/workspace/cache/2026.Project.OnDevice_Cobot-org"
+  },
+  "child_pid": 1496181
+}
