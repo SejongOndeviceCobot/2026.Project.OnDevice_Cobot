@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -36,12 +37,22 @@ def copy_release(destination: Path, *, include_current: bool = False) -> None:
         "examples/v1_uniform/rule-plan.json",
     ]
     if include_current:
-        published = load("evidence/published-source.json")
-        paths += [entry["path"] for entry in published["files"]]
+        paths += [file.relative_to(ROOT).as_posix()
+                  for file in sorted((ROOT / "src/depallet").rglob("*.py"))]
+        paths += ["scripts/run_task.py", "scripts/guarded_run.py",
+                  "scripts/curobo_worker.py"]
     for relative in paths:
         target = destination / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / relative, target)
+    if include_current:
+        entries = [{"path": relative,
+                    "sha256": hashlib.sha256((destination / relative).read_bytes()).hexdigest()}
+                   for relative in sorted(set(paths))
+                   if relative.startswith(("src/", "scripts/"))]
+        (destination / "evidence/modular-source-manifest.json").write_text(
+            json.dumps({"schema": "ondevice_cobot.modular_source.v1",
+                        "files": entries}, indent=2) + "\n", encoding="utf-8")
 
 
 class EvidenceTests(unittest.TestCase):
@@ -67,7 +78,7 @@ class EvidenceTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             checkout = Path(temporary)
             copy_release(checkout, include_current=True)
-            with (checkout / "src/task_runtime.py").open("a", encoding="utf-8") as stream:
+            with (checkout / "src/depallet/runtime/task_runtime.py").open("a", encoding="utf-8") as stream:
                 stream.write("\n# changed after the successful run\n")
             base = [sys.executable, "-B", str(ROOT / "tools/verify_evidence.py"),
                     "--root", str(checkout)]
@@ -76,8 +87,45 @@ class EvidenceTests(unittest.TestCase):
                                      capture_output=True, text=True, check=False)
             self.assertEqual(default.returncode, 0, default.stderr)
             self.assertEqual(current.returncode, 1)
-            self.assertIn("src/task_runtime.py", current.stderr)
+            self.assertIn("src/depallet/runtime/task_runtime.py", current.stderr)
             self.assertIn("SHA256", current.stderr)
+
+    def test_modular_checkout_matches_current_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary)
+            copy_release(checkout, include_current=True)
+            self.assertEqual(
+                verify_evidence.verify_repository(checkout, check_current=True),
+                (57, 16),
+            )
+
+    def test_current_manifest_requires_all_modular_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary)
+            copy_release(checkout, include_current=True)
+            manifest = checkout / "evidence/modular-source-manifest.json"
+            value = json.loads(manifest.read_text(encoding="utf-8"))
+            value["files"] = [entry for entry in value["files"]
+                              if entry["path"] != "src/depallet/runtime/task_runtime.py"]
+            manifest.write_text(json.dumps(value), encoding="utf-8")
+            with self.assertRaisesRegex(verify_evidence.EvidenceError, "소스 목록"):
+                verify_evidence.verify_repository(checkout, check_current=True)
+
+    def test_current_manifest_cannot_hide_flat_import(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            checkout = Path(temporary)
+            copy_release(checkout, include_current=True)
+            source = checkout / "src/depallet/runtime/task_runtime.py"
+            with source.open("a", encoding="utf-8") as stream:
+                stream.write("\nfrom task_runtime import main\n")
+            manifest = checkout / "evidence/modular-source-manifest.json"
+            value = json.loads(manifest.read_text(encoding="utf-8"))
+            for entry in value["files"]:
+                if entry["path"] == "src/depallet/runtime/task_runtime.py":
+                    entry["sha256"] = hashlib.sha256(source.read_bytes()).hexdigest()
+            manifest.write_text(json.dumps(value), encoding="utf-8")
+            with self.assertRaisesRegex(verify_evidence.EvidenceError, "이전 평면 모듈 import"):
+                verify_evidence.verify_repository(checkout, check_current=True)
 
     def test_repackaged_exit_tampering_fails_cli(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

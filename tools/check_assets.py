@@ -184,7 +184,7 @@ def _check_examples(data: Path) -> tuple[Path, Path]:
 
 
 def _check_profile_source() -> None:
-    source = _file(PROJECT, Path("src/robot_collision_profiles.py"), "profile source")
+    source = _file(PROJECT, Path("src/depallet/motion/robot_collision_profiles.py"), "profile source")
     try:
         tree = ast.parse(source.read_text(encoding="utf-8"), filename=str(source))
         values = {

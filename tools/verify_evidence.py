@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Check the published V1 source and the archived 16-box result without Isaac.
+"""Check immutable V1 evidence and, optionally, the modular checkout without Isaac.
 
-This verifies recorded bytes and internal consistency. It does not rerun physics.
+Archived run receipts prove their recorded scope only. A modular source manifest
+checks current bytes and import layout; it does not rerun physics.
 """
 
 from __future__ import annotations
@@ -166,13 +167,77 @@ def verify_sources(root: Path, *, check_current: bool = False) -> int:
         require(hashlib.sha256(archived[relative]).hexdigest() == digest,
                 f"보관된 소스 SHA256 불일치: {relative}")
     if check_current:
-        current = {relative: repository_file(root, relative).read_bytes() for relative in selected}
-        for relative, digest in selected.items():
-            require(hashlib.sha256(current[relative]).hexdigest() == digest,
-                    f"현재 소스 SHA256 불일치: {relative}")
-        require(set(selected) == local_import_closure(current),
-                "현재 소스의 로컬 import 폐쇄 불일치")
+        verify_current_source(root, selected)
     return len(selected)
+
+
+def verify_current_source(root: Path, historical: dict[str, str]) -> int:
+    """Check the current modular tree, independently of pre-refactor run receipts.
+
+    The manifest is an editable checkout inventory, unlike the pinned historical
+    evidence above. A match means these *current* files have not changed since
+    the manifest was made; it does not imply a successful post-refactor run.
+    """
+    relative_manifest = "evidence/modular-source-manifest.json"
+    try:
+        manifest = json.loads(repository_file(root, relative_manifest).read_text(encoding="utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise EvidenceError(f"현재 모듈 소스 manifest 오류: {relative_manifest}") from exc
+    require(isinstance(manifest, dict) and
+            manifest.get("schema") == "ondevice_cobot.modular_source.v1",
+            "현재 모듈 소스 manifest 스키마 불일치")
+    expected = file_index(manifest, relative_manifest)
+    source_root = root / "src"
+    require(source_root.is_dir() and not source_root.is_symlink(), "현재 src/ 폴더 없음")
+    actual: set[str] = set()
+    for candidate in source_root.rglob("*"):
+        require(not candidate.is_symlink(),
+                f"현재 src/ 심볼릭 링크 허용 안 함: {candidate.relative_to(root)}")
+        if candidate.is_file() and candidate.suffix == ".py":
+            actual.add(candidate.relative_to(root).as_posix())
+    scripts = {f"scripts/{name}" for name in
+               ("run_task.py", "guarded_run.py", "curobo_worker.py")}
+    require(all(path.startswith("src/depallet/") for path in actual),
+            "현재 src/에 depallet 패키지 밖 Python 파일이 있음")
+    require(set(expected) == actual | scripts,
+            "현재 모듈 소스 목록이 manifest 또는 고정 실행 스크립트와 다름")
+    package_inits = {"src/depallet/__init__.py"}
+    package_inits.update(f"src/depallet/{name}/__init__.py" for name in
+                         ("scene", "observation", "planning", "motion",
+                          "manipulation", "integration", "validation", "runtime"))
+    require(package_inits <= actual, "현재 모듈 패키지 초기화 파일 누락")
+    historic_names = {PurePosixPath(path).stem for path in historical
+                      if path.startswith("src/")}
+    current_names = [PurePosixPath(path).stem for path in actual
+                     if not path.endswith("/__init__.py")]
+    require(len(current_names) == len(set(current_names)) and
+            historic_names <= set(current_names),
+            "원본 54개 기능 모듈 중 누락 또는 중복이 있음")
+    modules = {".".join(PurePosixPath(path).with_suffix("").parts[1:])
+               for path in actual}
+    modules = {name.removesuffix(".__init__") for name in modules}
+    for relative, digest in expected.items():
+        require(hashlib.sha256(repository_file(root, relative).read_bytes()).hexdigest() == digest,
+                f"현재 모듈 소스 SHA256 불일치: {relative}")
+        tree = ast.parse(repository_file(root, relative).read_text(encoding="utf-8"),
+                         filename=relative)
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                targets = [alias.name for alias in node.names]
+            elif isinstance(node, ast.ImportFrom):
+                require(node.level == 0, f"상대 import를 사용한 현재 모듈: {relative}")
+                targets = [node.module] if node.module else []
+            else:
+                continue
+            for target in targets:
+                if target is None:
+                    continue
+                require(target.split(".", 1)[0] not in historic_names,
+                        f"이전 평면 모듈 import가 남음: {relative}: {target}")
+                if target == "depallet" or target.startswith("depallet."):
+                    require(target in modules,
+                            f"현재 모듈 import 대상 없음: {relative}: {target}")
+    return len(expected)
 
 
 def verify_scenario_contract(scenario: dict, plan: dict) -> list[str]:
@@ -339,17 +404,19 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1],
                         help="검증할 저장소 루트 (기본값: 이 스크립트의 상위 저장소)")
     parser.add_argument("--check-current", action="store_true",
-                        help="현재 src/와 scripts/도 성공 실행 원본과 같은지 검사")
+                        help="현재 모듈식 src/와 실행 스크립트의 manifest·import 일치 검사 (물리 재실행 증명 아님)")
     args = parser.parse_args(argv)
     try:
         source_count, box_count = verify_repository(args.root, check_current=args.check_current)
     except (EvidenceError, OSError, ValueError, TypeError, KeyError, SyntaxError, tarfile.TarError) as error:
         print(f"근거 검증 실패: {error}", file=sys.stderr)
         return 1
-    scope = "보관·현재" if args.check_current else "보관"
-    print(f"근거 검증 통과: {scope} 소스 {source_count}개 SHA256, V1 예시 {box_count}개, "
+    print(f"근거 검증 통과: 보관 소스 {source_count}개 SHA256, V1 예시 {box_count}개, "
           "원본·재패키징 저장 결과 각각 16/16, 원본 CPU 감사 473/473, "
           "새 실행 CPU 감사 490/490 (시뮬레이터 정답 입력).")
+    if args.check_current:
+        print("현재 모듈식 소스 manifest·import 검사 통과. "
+              "보관된 두 성공 실행은 재구성 전 코드의 결과이며, 이 검사는 물리 재실행이 아닙니다.")
     return 0
 
 

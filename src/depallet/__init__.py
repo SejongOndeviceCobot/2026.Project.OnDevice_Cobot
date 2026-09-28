@@ -1,0 +1,1 @@
+"""Modular depalletization simulation pipeline."""

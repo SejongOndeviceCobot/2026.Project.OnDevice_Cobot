@@ -19,9 +19,9 @@ import xml.etree.ElementTree as ET
 
 PROJECT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT / "src"))
-from curobo_bridge import (RESULT_SCHEMA, planner_random_seed, pose_error, sha256,
+from depallet.motion.curobo_bridge import (RESULT_SCHEMA, planner_random_seed, pose_error, sha256,
                            validate_request, write_json)
-from curobo_geometry import augment_robot_config, box_cover
+from depallet.motion.curobo_geometry import augment_robot_config, box_cover
 
 SOURCE_COMMIT = "78fd485fa82d9b9a063fb4985e371814587e666a"
 
@@ -155,14 +155,14 @@ def validate_diagnostic_plan_request(request):
 
 
 def plan(request, output, *, diagnostic_plan=False):
-    from payload_upright import validate_upright_request, orientation_criteria_kwargs, certify_upright_trajectory
+    from depallet.validation.payload_upright import validate_upright_request, orientation_criteria_kwargs, certify_upright_trajectory
     upright_policy = validate_upright_request(request)
     torch, wp = configure_runtime()
     import numpy as np
     import yaml
     from curobo.motion_planner import MotionPlanner, MotionPlannerCfg
     from curobo.types import GoalToolPose, JointState, Pose
-    from urdf_fk import pose as cpu_urdf_pose
+    from depallet.motion.urdf_fk import pose as cpu_urdf_pose
     from curobo._src.cost.tool_pose_criteria import ToolPoseCriteria
 
     tensor = lambda data: torch.tensor(data, dtype=torch.float32, device="cuda:0")
@@ -171,7 +171,7 @@ def plan(request, output, *, diagnostic_plan=False):
     payload_contact_certificate=None
     effective_robot_path=robot_path
     if request.get("payload"):
-        from payload_self_contact import derive_payload_config
+        from depallet.manipulation.payload_self_contact import derive_payload_config
         robot,payload_contact_certificate=derive_payload_config(robot,request)
         write_json(output/"payload-self-contact-validation.json",payload_contact_certificate)
         if not payload_contact_certificate["safe_to_plan"]:
@@ -225,7 +225,7 @@ def plan(request, output, *, diagnostic_plan=False):
                 raise ValueError("Payload dynamics require calibrated TCP-frame inertia")
             # Exact enclosing cell spheres, not a sampled MorphIt approximation.
             # The named world copy is disabled only after geometry registration.
-            from payload_self_contact import payload_cover_for_request
+            from depallet.manipulation.payload_self_contact import payload_cover_for_request
             spheres, payload_cover, payload_uncertainty = payload_cover_for_request(request)
             sphere_tensor = tensor([s["center"]+[s["radius"]] for s in spheres])
             planner.attachment_manager.update(
@@ -233,7 +233,7 @@ def plan(request, output, *, diagnostic_plan=False):
                 world_objects_pose_offset=Pose.from_list(payload["pose_base_wxyz"]))
             planner.scene_collision_checker.enable_obstacle(payload["box_id"], enable=False)
             write_json(output / "payload-coverage.json", payload_cover)
-            from payload_gpu_audit import audit as audit_gpu_payload
+            from depallet.validation.payload_gpu_audit import audit as audit_gpu_payload
             start_audit=audit_gpu_payload(planner,q,request,robot,output)
             if payload.get("cover_profile") and start_audit.get("passed") is not True:
                 raise ValueError("Declared payload cover failed actual GPU start collision audit")
@@ -264,7 +264,7 @@ def plan(request, output, *, diagnostic_plan=False):
                 joint_goal=JointState.from_position(tensor([goal["joint_target_rad"]]),joint_names=planner.joint_names)
                 result=planner.plan_cspace(joint_goal,q,max_attempts=3)
             elif payload:
-                from curobo_seed_repair import plan_payload_pose, make_fk_orientation_ranker
+                from depallet.motion.curobo_seed_repair import plan_payload_pose, make_fk_orientation_ranker
                 periodic_bounds=None
                 orientation_ranker=None
                 if upright_policy is not None:
@@ -279,12 +279,12 @@ def plan(request, output, *, diagnostic_plan=False):
                         kin_for_bounds,request['joint_names'],goal['tcp_frame'],goal['quaternion_wxyz'])
                 candidate_validator=None
                 if upright_policy is not None:
-                    from payload_candidate_validation import make_upright_candidate_validator
+                    from depallet.validation.payload_candidate_validation import make_upright_candidate_validator
                     candidate_validator=make_upright_candidate_validator(
                         request,robot,pieces["position"],output,len(phases)+1)
                 trajectory_seed_search=None
                 if request.get("upright_seed_search"):
-                    from upright_seed_search import make_seed_search
+                    from depallet.planning.upright_seed_search import make_seed_search
                     trajectory_seed_search=make_seed_search(request,robot)
                 result=plan_payload_pose(planner,goal_pose,q,output,goal["id"],
                                          periodic_joint_bounds=periodic_bounds,
@@ -293,7 +293,7 @@ def plan(request, output, *, diagnostic_plan=False):
             else:
                 result = planner.plan_pose(goal_pose, q, max_attempts=3)
             if result is None or result.success is None or not bool(result.success.all().item()):
-                from curobo_diagnostics import solver_summary, compact
+                from depallet.motion.curobo_diagnostics import solver_summary, compact
                 details={"goal":goal,"motion":solver_summary(result),"current_q":q.position.detach().cpu().tolist()}
                 if request.get("payload"):
                     ik=planner.ik_solver.solve_pose(goal_pose,current_state=q,return_seeds=32)
@@ -442,7 +442,7 @@ def main():
         request = validate_request(json.loads(args.request.read_text()))
         if args.diagnostic_plan:
             validate_diagnostic_plan_request(request)
-        from payload_upright import validate_upright_request
+        from depallet.validation.payload_upright import validate_upright_request
         validate_upright_request(request)
     if args.check_request:
         print(json.dumps({"request_valid": True, "schema": request["schema"]}))
@@ -454,7 +454,7 @@ def main():
         if args.prepare_robot:
             prepare_robot(args, output)
         elif args.diagnose_request:
-            from curobo_diagnostics import diagnose
+            from depallet.motion.curobo_diagnostics import diagnose
             torch, wp = configure_runtime()
             diagnose(request, output, torch, wp, args.diagnostic_seed, args.diagnostic_max_dt)
         elif args.diagnostic_plan:
